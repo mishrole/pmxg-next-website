@@ -1,0 +1,64 @@
+{
+    "welcome_to_react": "Bienvenido a React y react-i18next",
+    "dynamic_value": "Han pasado {{number_of_days}} días desde que esta app fue lanzada",
+    "home": "Inicio",
+    "about-us": "Sobre nosotros",
+    "products": "Productos",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "login": "Login",
+    "who-we-are": "¿Quiénes Somos?",
+    "who-we-are_message": "PMXG es una compañía fundada en el 2005, cuyo equipo de trabajo cuenta con una experiencia y reconocimientos de más de 25 años en el Mercado de Metales Preciosos. Experiencia que le ha permitido desarrollar una filisofía de trabajo basada en el cliente.",
+    "gold": "Oro",
+    "silver": "Plata",
+    "platinum": "Platino",
+    "palladium": "Paladio",
+
+    "our-services": "Nuestros Servicios",
+    "our-services_message": "PMXG es la mejor opción en la industria de metales preciosos en el Sur de la Florida.",
+    "services-list": [
+        {
+            "title": "Nuestros Servicios", 
+            "subtitle": [
+                {
+                    "content": "– Compramos Oro, Plata y Platino a precios de Mercado o cierre de Londres."
+                },
+                {
+                    "content": "– Vendemos metales preciosos a la industria."
+                }
+            ]
+        },
+        {
+            "title": "Análisis de Metales Preciosos", 
+            "subtitle": [
+                {
+                    "content": "- Ofrecemos servicio de analísis de fuego ágiles y precisos."
+                },
+                {
+                    "content": "- Equipos modernos de indusción que garantizan mínimos porcentajes de merma en nuestros procesos."
+                }
+            ]
+        },
+        {
+            "title": "Asesoría y acompañamiento en Comercio Internacional", 
+            "subtitle": [
+                {
+                    "content": "- Asesoría permamente y acompañamiento en procesos de internacionalización para compañías que deseen exportar por primera vez."
+                },
+                {
+                    "content": "- Programa Anti-lavado de Dinero que trabaja para fortalezar ambas partes de forma detallada y completa."
+                }
+            ]
+        }
+    ],
+
+    "contact-title": "¿Tienes alguna pregunta específica?",
+    "contact-subtitle": "Haga click en el botón para contactarnos.",
+
+    "footer": {
+        "address": "1890 Nw 95 Ave",
+        "address_info": "Doral, FL 33172",
+        "contact-us-here": "Contáctenos aquí",
+        "phone": "(305) 556-1696"
+    }
+}

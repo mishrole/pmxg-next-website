@@ -1,0 +1,65 @@
+{
+    "welcome_to_react": "Welcome to React and react-i18next",
+    "dynamic_value": "It's been {{number_of_days}} days since this app was released",
+    "home": "Home",
+    "about-us": "About us",
+    "products": "Products",
+    "services": "Services",
+    "contact": "Contact",
+    "login": "Login",
+    "who-we-are": "Who We Are",
+    "who-we-are_message": "PMXG is a company that was founded in 2005, our team has over 25 years of experience and recognition in the Precious Metals Market. This experience that has allowed us to develop a work philosophy based on better serving our client.",
+    "gold": "Gold",
+    "silver": "Silver",
+    "platinum": "Platinum",
+    "palladium": "Palladium",
+
+    "our-services": "Our Services",
+    "our-services_message": "PMXG is the best option in the precious metal industry in South Florida.",
+    "services-list": [
+        {
+            "title": "Our Services", 
+            "subtitle": [
+                {
+                    "content": "– We buy Gold, Silver, and Platinum at Market prices or London closing."
+                },
+                {
+                    "content": "– We sell precious metals to the industry."
+                }
+            ]
+        },
+        {
+            "title": "Analysis of Precious Metals", 
+            "subtitle": [
+                {
+                    "content": "- We offer agile and precise fire analysis."
+                },
+                {
+                    "content": "- Utilizing modern induction equipment, we guarantee a minimum percentage of shrinkage in our processes."
+                }
+            ]
+        },
+        {
+            "title": "Consulting and support in International Commerce", 
+            "subtitle": [
+                {
+                    "content": "- Permanent consulting and suuport in the internationalization processes for companies wishing to export for the first time."
+                },
+                {
+                    "content": "- Anti-Money Laundering Program that works to strengthen both parties in a detailed and complete way."
+                }
+            ]
+        }
+    ],
+
+    "contact-title": "Do you have any questions?",
+    "contact-subtitle": "Please click on the button to contact us!",
+
+    "footer": {
+        "address": "1890 Nw 95 Ave",
+        "address_info": "Doral, FL 33172",
+        "contact-us-here": "Contact Us Here",
+        "phone": "(305) 556-1696"
+    }
+
+}
