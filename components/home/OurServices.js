@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Container, Row, Col, Card } from "react-bootstrap";
+import Image from 'next/image';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -18,13 +19,13 @@ const StyledCard = styled(Card)`
 
 const services = [
     {
-        "image": "./assets/images/our-services/DSC_0178.jpg"
+        "image": "/assets/images/our-services/DSC_0178.jpg"
     },
     {
-        "image": "./assets/images/our-services/DSC_0251.jpg"
+        "image": "/assets/images/our-services/DSC_0251.jpg"
     },
     {
-        "image": "./assets/images/our-services/DSC_0112.jpg"
+        "image": "/assets/images/our-services/DSC_0112.jpg"
     }
 ]
 
@@ -44,7 +45,10 @@ export const OurServices = (props) => {
                         services.map(({ image }, index) => (
                             <Col xs={12} md={4} className="p-3" key={`service-wrapper-${index}`}>
                                 <StyledCard key={`service-card-${index}`}>
-                                    <Card.Img variant="top" src={image} key={`service-card-image-${index}`} />
+                                    {/* <Card.Img variant="top" src={image} key={`service-card-image-${index}`} alt="" /> */}
+                                    <div>
+                                        <Image priority={index === 0 && true} className="card-img-top" src={image} key={`service-card-image-${index}`} alt="" layout="responsive" objectFit="scale-down" width="100" height="65"/>
+                                    </div>
                                     <Card.Body key={`service-card-body-${index}`}>
                                         <Card.Title key={`service-card-title-${index}`}>{ t(`translation:services-list.${index}.title`) }</Card.Title>
                                         {

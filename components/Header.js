@@ -1,8 +1,9 @@
-import { useRouter } from 'next/router'
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
-import { useTranslation } from "next-i18next";
-import Link from 'next/link'
 import styled from 'styled-components';
+import { useRouter } from 'next/router'
+import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link'
+import Image from 'next/image';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -24,6 +25,44 @@ const StyledButton = styled(Button)`
     }
 `;
 
+const StyledNavbarToggler = styled(Navbar.Toggle)`
+    &:focus {
+        box-shadow: none;
+    }
+
+    border: none;
+`;
+
+const StyledAnchor = styled.a`
+    &&& {
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 .5em;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    &:hover {
+        color: rgba(0,0,0,.55);
+    }
+`;
+
+const StyledAnchorSmall = styled.a`
+    position: relative;
+    display: block;
+
+    > span {
+        min-width: 100px;
+    }
+
+`;
+
+const StyledImage = styled(Image)`
+    padding: 0 !important;
+`
+
 const Header = (props) => {
     const router = useRouter()
     const { locales } = router
@@ -40,27 +79,29 @@ const Header = (props) => {
                 <Container>
                     <Navbar.Brand>
                         <Link href="/">
-                            <a><img src="/assets/images/pmxg-large-logo.png" alt="PMXG Logo" width="120px" /></a>
+                            <StyledAnchorSmall>
+                                <StyledImage alt="PMXG Logo" layout="responsive" objectFit="scale-down" width={100} height={50} src="/assets/images/pmxg-large-logo.png"></StyledImage>
+                            </StyledAnchorSmall>
                         </Link>
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <StyledNavbarToggler aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll" className="justify-content-lg-end my-3 my-lg-0">
                         <Nav navbarScroll>
                             {/* <NavLink className={({ isActive }) => isActive ? "red" : "blue"} /> */}
                             <Link href="/">
-                                <a className="header-link nav-link">{t('translation:home')}</a>
+                                <StyledAnchor className="nav-link">{t('translation:home')}</StyledAnchor>
                             </Link>
                             <Link href="/about-us">
-                                <a className="header-link nav-link">{t('translation:about-us')}</a>
+                                <StyledAnchor className="nav-link">{t('translation:about-us')}</StyledAnchor>
                             </Link>
                             <Link href="/products">
-                                <a className="header-link nav-link">{t('translation:products')}</a>
+                                <StyledAnchor className="nav-link">{t('translation:products')}</StyledAnchor>
                             </Link>
                             <Link href="/services">
-                                <a className="header-link nav-link">{t('translation:services')}</a>
+                                <StyledAnchor className="nav-link">{t('translation:services')}</StyledAnchor>
                             </Link>
-                            <a className="header-link nav-link" href="https://app.pmxg.com/contact">{t('translation:contact')}</a>
-                            <a className="header-link nav-link" href="https://app.pmxg.com/auth">{t('translation:login')}</a>
+                            <StyledAnchor className="nav-link" href="https://app.pmxg.com/contact">{t('translation:contact')}</StyledAnchor>
+                            <StyledAnchor className="nav-link" href="https://app.pmxg.com/auth">{t('translation:login')}</StyledAnchor>
                             {
 
                                 locales.map((locale) => (
@@ -75,21 +116,6 @@ const Header = (props) => {
                     </Navbar.Collapse>
                 </Container>
             </StyledNavbar>
-
-            <style jsx>{`
-                .header-link {
-                    color: #000000;
-                    font-size: 14px;
-                    font-weight: bold;
-                    margin: 0 .5em;
-                    letter-spacing: 0.5px;
-                    text-transform: uppercase;
-                }
-
-                .header-link:hover {
-                    color: rgba(0,0,0,.55);
-                }
-            `}</style>
         </>
     )
 }

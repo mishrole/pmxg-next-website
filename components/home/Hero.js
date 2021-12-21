@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { Carousel } from "react-bootstrap";
-import { ArrowDown } from "react-bootstrap-icons";
+import { Carousel } from 'react-bootstrap';
+import { ArrowDown } from 'react-bootstrap-icons';
 import { Link } from 'react-scroll';
+import Image from 'next/image';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -18,8 +19,10 @@ const StyledCarousel = styled(Carousel)`
 `;
 
 const StyledCarouselItem = styled(Carousel.Item)`
-    max-height: 760px;
+    // max-height: 760px;
+    min-height: 760px;
     position: relative;
+    display: block;
 `;
 
 const StyledArrowDown = styled(ArrowDown)`
@@ -71,11 +74,38 @@ const StyledScrollDown = styled(Link)`
     align-items: center;
 `;
 
+// const StyledImage = styled(Image)`
+//     padding: 0 !important;
+// `
+
+const heroImages = [
+    {
+        'url': '/assets/images/carousel/small_gold_furnance.jpg',
+        'alt': 'Small Gold Furnance'
+    },
+    {
+        'url': '/assets/images/carousel/testing_gold-scaled.jpg',
+        'alt': 'Testing Gold Scaled'
+    },
+    {
+        'url': '/assets/images/carousel/gold-chemical-testing.jpg',
+        'alt': 'Gold Chemical Testing'
+    },
+    {
+        'url': '/assets/images/carousel/melting-pure-gold.jpg',
+        'alt': 'Melting Pure Gold'
+    },
+    {
+        'url': '/assets/images/carousel/melting_gold-scaled.jpg',
+        'alt': 'Melting Gold Scaled'
+    }
+]
+
 export const Hero = (props) => {
     return (
         <>
             <StyledCarousel indicators={false} interval={10000} fade={true}>
-                <StyledCarouselItem>
+                {/* <StyledCarouselItem>
                     <img className="d-block w-100" src="/assets/images/carousel/small_gold_furnance.jpg" alt="Small Gold Furnance"/>
                 </StyledCarouselItem>
                 <StyledCarouselItem>
@@ -89,10 +119,18 @@ export const Hero = (props) => {
                 </StyledCarouselItem>
                 <StyledCarouselItem>
                     <img className="d-block w-100" src="/assets/images/carousel/melting_gold-scaled.jpg" alt="Melting Gold Scaled"/>
-                </StyledCarouselItem>
+                </StyledCarouselItem> */}
+                {
+                    heroImages.map(({url, alt}, index) => (
+                        <StyledCarouselItem key={`hero-carousel-item-${index}`}>
+                            {/* <Image src={url} alt={alt} priority={index === 0 && true} layout="responsive" objectFit="scale-down" width={100} height={100}></Image> */}
+                            <Image src={url} alt={alt} priority={index === 0 && true} layout="fill" objectFit="cover"></Image>
+                        </StyledCarouselItem>
+                    ))
+                }
             </StyledCarousel>
             <StyledScrollDownWrapper>
-                <StyledScrollDown to="who-we-are" smooth={true} duration={1200}>
+                <StyledScrollDown to="who-we-are" smooth={true} duration={1000}>
                     <StyledArrowDown color="white" size={16} />
                 </StyledScrollDown>
             </StyledScrollDownWrapper>
