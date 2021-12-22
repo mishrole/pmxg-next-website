@@ -7,7 +7,7 @@ import styles from './../styles/About-us.module.css'
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ['translation']))
+            ...(await serverSideTranslations(locale, ['common', 'about-us']))
         }
     }
 }
@@ -90,6 +90,9 @@ const AboutUs = () => {
                 </div>
             </div>
         </div>
+
+
+
     )
 }
 

@@ -1,21 +1,13 @@
-import { useRouter } from 'next/router'
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
-import { useTranslation } from "next-i18next";
-import Link from 'next/link'
 import styled from 'styled-components';
-
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['translation']))
-        }
-    }
-}
+import { useRouter } from 'next/router';
+import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+import Link from 'next/link'
+import Image from 'next/image';
 
 const StyledNavbar = styled(Navbar)`
+    box-shadow: 0 7px 15px -7px rgb(0 0 0 / 4%);
     margin-bottom: 20px;
     padding: 20px 0;
-    box-shadow: 0 7px 15px -7px rgb(0 0 0 / 4%);
 `;
 
 const StyledButton = styled(Button)`
@@ -24,13 +16,65 @@ const StyledButton = styled(Button)`
     }
 `;
 
-const Header = (props) => {
+const StyledNavbarToggler = styled(Navbar.Toggle)`
+    border: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+`;
+
+const StyledAnchor = styled.a`
+    &&& {
+        color: rgba(0,0,0,.55);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        margin: 0 .5em;
+        text-transform: uppercase;
+    }
+
+    &&&:hover {
+        color: rgba(0,0,0,1);
+    }
+
+    &&&.active {
+        color: rgba(0,0,0,1);
+    }
+`;
+
+const StyledAnchorSmall = styled.a`
+    display: block;
+    position: relative;
+
+    > span {
+        min-width: 100px;
+    }
+
+`;
+
+const StyledImage = styled(Image)`
+    padding: 0 !important;
+`
+
+const Header = ({ translate }) => {
     const router = useRouter()
     const { locales } = router
-    const { t } = useTranslation()
 
-    const changeLanguage = (lang) => {
-        router.push(router.pathname, router.pathname, { locale: lang })
+    const home = translate('common:home');
+    const about = translate('common:about-us');
+    const products = translate('common:products');
+    const services = translate('common:services');
+    const contact = translate('common:contact');
+    const login = translate('common:login');
+
+    async function changeLanguage(lang) {
+        router.replace(
+            router.pathname,
+            router.pathname,
+            { locale: lang, scroll: false }
+        );
     }
 
     return (
@@ -40,31 +84,36 @@ const Header = (props) => {
                 <Container>
                     <Navbar.Brand>
                         <Link href="/">
-                            <a><img src="/assets/images/pmxg-large-logo.png" alt="PMXG Logo" width="120px" /></a>
+                            <StyledAnchorSmall>
+                                <StyledImage alt="PMXG Logo" layout="responsive" objectFit="scale-down" width={100} height={50} src="/assets/images/pmxg-large-logo.png"></StyledImage>
+                            </StyledAnchorSmall>
                         </Link>
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
+                    <StyledNavbarToggler aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll" className="justify-content-lg-end my-3 my-lg-0">
                         <Nav navbarScroll>
-                            {/* <NavLink className={({ isActive }) => isActive ? "red" : "blue"} /> */}
                             <Link href="/">
-                                <a className="header-link nav-link">{t('translation:home')}</a>
+                                <StyledAnchor className={router.pathname === '/' ? 'nav-link active' : 'nav-link'}>{home}</StyledAnchor>
                             </Link>
                             <Link href="/about-us">
-                                <a className="header-link nav-link">{t('translation:about-us')}</a>
+                                <StyledAnchor className={router.pathname === '/about-us' ? 'nav-link active' : 'nav-link'}>{about}</StyledAnchor>
                             </Link>
                             <Link href="/products">
-                                <a className="header-link nav-link">{t('translation:products')}</a>
+                                <StyledAnchor className={router.pathname === '/products' ? 'nav-link active' : 'nav-link'}>{products}</StyledAnchor>
                             </Link>
                             <Link href="/services">
-                                <a className="header-link nav-link">{t('translation:services')}</a>
+                                <StyledAnchor className={router.pathname === '/services' ? 'nav-link active' : 'nav-link'}>{services}</StyledAnchor>
                             </Link>
-                            <a className="header-link nav-link" href="https://app.pmxg.com/contact">{t('translation:contact')}</a>
-                            <a className="header-link nav-link" href="https://app.pmxg.com/auth">{t('translation:login')}</a>
+                            <StyledAnchor className="nav-link" href="https://app.pmxg.com/contact">{contact}</StyledAnchor>
+                            <StyledAnchor className="nav-link" href="https://app.pmxg.com/auth">{login}</StyledAnchor>
                             {
 
                                 locales.map((locale) => (
+<<<<<<< HEAD
                                     <StyledButton aria-label={`Set language to ${locale}`} variant="button" key={`language-${locale}`} className="mx-lg-1 text-start text-lg-end" onClick={
+=======
+                                    <StyledButton aria-label={`Set language to ${locale}`} variant="link" key={ `language-${locale}` } className="mx-lg-1 text-start text-lg-end" onClick = {
+>>>>>>> 9c2c3dd54dbd3d80fab6be6c7757fafaa038592a
                                         () => changeLanguage(locale)
                                     }>
                                         <i className={`flag-icon flag-icon-${locale === 'en' ? 'us' : locale}`}></i>
@@ -75,21 +124,6 @@ const Header = (props) => {
                     </Navbar.Collapse>
                 </Container>
             </StyledNavbar>
-
-            <style jsx>{`
-                .header-link {
-                    color: #000000;
-                    font-size: 14px;
-                    font-weight: bold;
-                    margin: 0 .5em;
-                    letter-spacing: 0.5px;
-                    text-transform: uppercase;
-                }
-
-                .header-link:hover {
-                    color: rgba(0,0,0,.55);
-                }
-            `}</style>
         </>
     )
 }
