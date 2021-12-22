@@ -1,0 +1,36 @@
+{
+    "title": "About Us",
+    "description": [
+        {
+            "content": "PMXG was founded on June 23, 2005, our team has over 25 years of experience and recognition in the Precious Metals Market. Our experience has allowed us to develop a work philosophy based on the client needs."
+        },
+        {
+            "content": "That is why all of our processes have been designed with our client’s different needs in mind, offering tailored solutions and providing permanent support at each stage of the process, helping them to achieve a successful internationalization process."
+        },
+        {
+            "content": "From the city of Doral, in South Florida, we serve different markets, from small to large mining companies, as well as precious metal merchants, mainly from Latin America and the United States."
+        }
+    ],
+    "mission": {
+        "title": "Our Mission",
+        "subtitle": "Offer Our Clients:",
+        "values": [
+            {
+                "title": "Transparency",
+                "subtitle": "Integrity and honesty in all our processes"
+            },
+            {
+                "title": "Security",
+                "subtitle": "We establish business relationships based on mutual trust."
+            },
+            {
+                "title": "Service",
+                "subtitle": "Accurate processes designed to optimize time and costs."
+            },
+            {
+                "title": "Cost Effectiveness",
+                "subtitle": "Reliable analysis and payment flexibility."
+            }
+        ]
+    }
+}

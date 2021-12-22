@@ -3,6 +3,12 @@ module.exports = {
         locales: ["en", "es"],
         defaultLocale: "es"
     },
-    ns: ['common', 'translation'],
-    react: { useSuspense: false }
+    ns: ['common', 'home', 'about-us'],
+    react: {
+        useSuspense: true,
+      },
+      debug: false,
+      interpolation: {
+        escapeValue: false
+      }
 }

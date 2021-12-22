@@ -1,16 +1,4 @@
 {
-    "head-title": "PMXG Smelters, refiners, distributors of gold, silver and metals.",
-    "head-description": "PMXG is a leader in smelting gold, silver and other precious metals as well as testing. We can advise you with the purchase of bars of these metals.",
-
-    "welcome_to_react": "Welcome to React and react-i18next",
-    "dynamic_value": "It's been {{number_of_days}} days since this app was released",
-
-    "home": "Home",
-    "about-us": "About us",
-    "products": "Products",
-    "services": "Services",
-    "contact": "Contact",
-    "login": "Login",
     "who-we-are": "Who We Are",
     "who-we-are_message": "PMXG is a company that was founded in 2005, our team has over 25 years of experience and recognition in the Precious Metals Market. This experience that has allowed us to develop a work philosophy based on better serving our client.",
     "gold": "Gold",
@@ -58,6 +46,7 @@
 
     "contact-title": "Do you have any questions?",
     "contact-subtitle": "Please click on the button to contact us!",
+    "contact-cta": "Contact",
 
     "footer": {
         "address": "1890 Nw 95 Ave",

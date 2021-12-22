@@ -1,0 +1,36 @@
+{
+    "title": "Sobre nosotros",
+    "description": [
+        {
+            "content": "PMXG es una compañía fundada el 23 de junio de 2005, cuyo equipo de trabajo cuenta con una experiencia y reconocimientos de más de 25 años en el Mercado de Metales Preciosos. Experiencia que le ha permitido desarrollar una filisofía de trabajo basada en el cliente."
+        },
+        {
+            "content": "Es por eso que todos sus procesos han sido diseñados pensando en sus diferentes necesidades, ofreciendo soluciones a la medida y brindando acompañamiento permanente al cliente en cada etapa del proceso, dandole el soporte que requiere para su exitoso proceso de internacionalización."
+        },
+        {
+            "content": "Desde la ciudad de Doral, en el Sur de la Florida, atiende diferentes mercados, desde pequeñas hasta grandes compañías mineras, así como comerciantes de metales preciosos, principalmente de Latinoamérica y Estados Unidos."
+        }
+    ],
+    "mission": {
+        "title": "Nuestra Misión",
+        "subtitle": "Ofrecer a nuestros clientes:",
+        "values": [
+            {
+                "title": "Transparencia",
+                "subtitle": "Integridad y honestidad en todos nuestros procesos."
+            },
+            {
+                "title": "Security",
+                "subtitle": "Establecemos relaciones comerciales basadas en confianza mutua."
+            },
+            {
+                "title": "Service",
+                "subtitle": "Procesos precisos diseñados para optimizar tiempos y costos."
+            },
+            {
+                "title": "Cost Effectiveness",
+                "subtitle": "Análisis confiables y agilidad en los pagos."
+            }
+        ]
+    }
+}

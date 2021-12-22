@@ -1,16 +1,4 @@
 {
-    "head-title": "PMXG Fundidores, refinadores, distribuidores de oro, plata y metales.",
-    "head-description": "PMXG es líder en la fundición de oro, plata y otros metales preciosos ademas de ensayos. Podemos asesorarlo con compra de barras de estos metales.",
-
-    "welcome_to_react": "Bienvenido a React y react-i18next",
-    "dynamic_value": "Han pasado {{number_of_days}} días desde que esta app fue lanzada",
-
-    "home": "Inicio",
-    "about-us": "Sobre nosotros",
-    "products": "Productos",
-    "services": "Servicios",
-    "contact": "Contacto",
-    "login": "Login",
     "who-we-are": "¿Quiénes Somos?",
     "who-we-are_message": "PMXG es una compañía fundada en el 2005, cuyo equipo de trabajo cuenta con una experiencia y reconocimientos de más de 25 años en el Mercado de Metales Preciosos. Experiencia que le ha permitido desarrollar una filisofía de trabajo basada en el cliente.",
     "gold": "Oro",
@@ -58,6 +46,7 @@
 
     "contact-title": "¿Tienes alguna pregunta específica?",
     "contact-subtitle": "Haga click en el botón para contactarnos.",
+    "contact-cta": "Contacto",
 
     "footer": {
         "address": "1890 Nw 95 Ave",

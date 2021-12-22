@@ -1,16 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { useTranslation } from 'next-i18next';
 import Link from 'next/link'
 import styled from 'styled-components';
 import Image from 'next/image';
-
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['translation']))
-        }
-    }
-}
 
 const StyledFooter = styled.footer`
     background-color: #1d1d1d;
@@ -20,9 +11,7 @@ const StyledImage = styled(Image)`
     padding: 0 !important;
 `
 
-const Footer = (props) => {
-
-    const { t } = useTranslation();
+const Footer = ({ translate }) => {
 
     return (
 

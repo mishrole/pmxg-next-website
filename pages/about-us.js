@@ -4,7 +4,7 @@ import { useTranslation } from "next-i18next";
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ['translation']))
+            ...(await serverSideTranslations(locale, ['common', 'about-us']))
         }
     }
 }
@@ -14,7 +14,7 @@ const AboutUs = () => {
     const { t } = useTranslation();
     
     return (
-        <h1>About us</h1>
+        <h1>{t('about-us:title')}</h1>
     )
 }
 

@@ -4,14 +4,6 @@ import { ArrowDown } from 'react-bootstrap-icons';
 import { Link } from 'react-scroll';
 import Image from 'next/image';
 
-export async function getStaticProps({ locale }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['translation']))
-        }
-    }
-}
-
 const StyledCarousel = styled(Carousel)`
     position: relative;
     top: 70px;
@@ -105,25 +97,9 @@ export const Hero = (props) => {
     return (
         <>
             <StyledCarousel indicators={false} interval={10000} fade={true}>
-                {/* <StyledCarouselItem>
-                    <img className="d-block w-100" src="/assets/images/carousel/small_gold_furnance.jpg" alt="Small Gold Furnance"/>
-                </StyledCarouselItem>
-                <StyledCarouselItem>
-                    <img className="d-block w-100" src="/assets/images/carousel/testing_gold-scaled.jpg" alt="Testing Gold Scaled"/>
-                </StyledCarouselItem>
-                <StyledCarouselItem>
-                    <img className="d-block w-100" src="/assets/images/carousel/gold-chemical-testing.jpg" alt="Gold Chemical Testing"/>
-                </StyledCarouselItem>
-                <StyledCarouselItem>
-                    <img className="d-block w-100" src="/assets/images/carousel/melting-pure-gold.jpg" alt="Melting Pure Gold"/>
-                </StyledCarouselItem>
-                <StyledCarouselItem>
-                    <img className="d-block w-100" src="/assets/images/carousel/melting_gold-scaled.jpg" alt="Melting Gold Scaled"/>
-                </StyledCarouselItem> */}
                 {
                     heroImages.map(({url, alt}, index) => (
                         <StyledCarouselItem key={`hero-carousel-item-${index}`}>
-                            {/* <Image src={url} alt={alt} priority={index === 0 && true} layout="responsive" objectFit="scale-down" width={100} height={100}></Image> */}
                             <Image src={url} alt={alt} priority={index === 0 && true} layout="fill" objectFit="cover"></Image>
                         </StyledCarouselItem>
                     ))
