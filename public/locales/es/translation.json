@@ -3,22 +3,56 @@
     "dynamic_value": "Han pasado {{number_of_days}} días desde que esta app fue lanzada",
     "home": "Inicio",
     "about-us": "Sobre nosotros",
+    "description_v1": "PMXG es una compañía fundada el 23 de junio de 2005, cuyo equipo de trabajo cuenta con una experiencia y reconocimientos de más de 25 años en el Mercado de Metales Preciosos. Experiencia que le ha permitido desarrollar una filisofía de trabajo basada en el cliente.",
+    "description_v2": "Es por eso que todos sus procesos han sido diseñados pensando en sus diferentes necesidades, ofreciendo soluciones a la medida y brindando acompañamiento permanente al cliente en cada etapa del proceso, dandole el soporte que requiere para su exitoso proceso de internacionalización.",
+    "description_v3": "Desde la ciudad de Doral, en el Sur de la Florida, atiende diferentes mercados, desde pequeñas hasta grandes compañías mineras, así como comerciante de metales preciosos, principalmente de Latinoamerica y Estados Unidos",
     "products": "Productos",
     "services": "Servicios",
     "contact": "Contacto",
     "login": "Login",
+    "transparency": "transparencia",
+    "security": "seguridad",
+    "service": "servicio",
+    "cost-effectiveness": "rentabilidad",
+    "transparency-message": "Integridad y honestidad en todos nuestros procesos.",
+    "security-message": "Establecemos relaciones comerciales basadas en mutua confianza.",
+    "service-message": "Procesos precisos diseñados para optimizer tiempos y costos.",
+    "cost-effectiveness-message": "Analisis confiables y agilidad en los pagos.",
+    "our-mission": "Nuestra mision",
+    "offer-clients": "Ofrecer a nuestros clientes:",
     "who-we-are": "¿Quiénes Somos?",
     "who-we-are_message": "PMXG es una compañía fundada en el 2005, cuyo equipo de trabajo cuenta con una experiencia y reconocimientos de más de 25 años en el Mercado de Metales Preciosos. Experiencia que le ha permitido desarrollar una filisofía de trabajo basada en el cliente.",
     "gold": "Oro",
     "silver": "Plata",
     "platinum": "Platino",
     "palladium": "Paladio",
-
+    "obverse": "Anverso",
+    "reverse": "Reverso",
     "our-services": "Nuestros Servicios",
     "our-services_message": "PMXG es la mejor opción en la industria de metales preciosos en el Sur de la Florida.",
+    "sell-gold-silver": "Venta de oro y plata fina",
+    "silver-coins": "Monedas de plata fina",
+    "fundition-bars": "Barras de fundición",
+    "product": [
+        {
+            "header": "Oro fino 9999",
+            "body": "1 Oz barra",
+            "footer": "Au - 9999 Oro puro"
+        },
+        {
+            "header": "Plata fina 999",
+            "body": "1 Oz barra",
+            "footer": "Ag - 999 Plata pura"
+        },
+        {
+            "header": "Plata fina 999",
+            "body": "10 Oz barra",
+            "footer": "Ag - 999 Plata pura"
+        }
+    ],
     "services-list": [
         {
-            "title": "Nuestros Servicios", 
+            "title": "Nuestros Servicios",
             "subtitle": [
                 {
                     "content": "– Compramos Oro, Plata y Platino a precios de Mercado o cierre de Londres."
@@ -29,7 +63,7 @@
             ]
         },
         {
-            "title": "Análisis de Metales Preciosos", 
+            "title": "Análisis de Metales Preciosos",
             "subtitle": [
                 {
                     "content": "- Ofrecemos servicio de analísis de fuego ágiles y precisos."
@@ -40,7 +74,7 @@
             ]
         },
         {
-            "title": "Asesoría y acompañamiento en Comercio Internacional", 
+            "title": "Asesoría y acompañamiento en Comercio Internacional",
             "subtitle": [
                 {
                     "content": "- Asesoría permamente y acompañamiento en procesos de internacionalización para compañías que deseen exportar por primera vez."
@@ -51,14 +85,12 @@
             ]
         }
     ],
-
     "contact-title": "¿Tienes alguna pregunta específica?",
     "contact-subtitle": "Haga click en el botón para contactarnos.",
-
     "footer": {
         "address": "1890 Nw 95 Ave",
         "address_info": "Doral, FL 33172",
         "contact-us-here": "Contáctenos aquí",
-        "phone": "(305) 556-1696"
+        "phone": "Teléfono: (305) 556-1696"
     }
 }

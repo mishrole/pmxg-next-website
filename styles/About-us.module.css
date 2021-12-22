@@ -1,0 +1,122 @@
+.container{
+    margin: 7rem 0 0 0;
+}
+  
+
+.image{
+    background-image: url('/assets/images/about-us/liquid-gold-scaled.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+}
+
+.image .title{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 3.2rem;
+}
+
+.textContainer{
+    display: flex;
+    justify-content: center;
+    margin: 4rem;
+}
+
+.textContainer .imageContainer{
+    width: 100%;
+    height: auto;
+}
+
+.textContainer .description{
+    font-family: 'Open Sans';
+    text-align: justify;
+    color: #777;
+    font-size: 19px;
+    font-weight: 400;
+    margin: 0 10rem 0 0;
+}
+
+.textContainer .description p{
+    margin-bottom: 2rem;
+}
+
+.ourMission{
+    background: #273e74;
+    height: 100vh;
+    padding: 85px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ourMission .titles{
+    margin-bottom: 4rem;
+}
+
+.ourMission h2{
+    color: #b5b5b5;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 45px;
+}
+
+.ourMission h3{
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 28px;
+}
+
+.ourMission .iconsContainer{
+    margin: 1.8rem 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0.5rem;
+}
+
+.ourMission .iconsContainer .cardHeader{
+    background: #ffffff;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border-radius: 100%;
+    padding: 50px;
+}
+
+.ourMission .iconsContainer .cardHeader i{
+    font-size: 55px;
+    color: #273e74;
+}
+
+.cardBody{
+    /* border: 1px solid red; */
+    text-align: center;
+    color: #ffffff;
+    margin: 2.2rem 0;
+}
+
+.cardBody .subtitle{
+    line-height: 35px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.text{
+    padding: 0 1.2rem;
+}
+
+.iconsContainer::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

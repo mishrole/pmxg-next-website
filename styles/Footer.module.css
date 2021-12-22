@@ -1,0 +1,67 @@
+.footer{
+    background: #1d1d1d;
+    width: 100%;
+    height: 75vh;
+    padding: 15px;
+    color: #aaaaaa;
+    overflow: hidden;
+    position: relative;
+}
+
+.footer .Content{
+    padding: 3rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+}
+
+.grid{
+    padding: 1rem;
+}
+
+.grid .text{
+    text-align: left;
+    overflow: hidden;
+    line-height: 15px;
+}
+
+.imageContent{
+    margin: 1.8rem auto;
+}
+
+.textContent{
+    line-height: 15px;
+    font-weight: 500;
+}
+
+.textContentT{
+    width: 50%;
+}
+
+
+.textContent p:nth-child(3){
+    color: white;
+}
+
+.textContentb {
+    columns: 2;
+}
+
+.textContentb a{
+    color: #aaaaaa;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.textContentb a:hover{
+    color: #273e74;
+}
+
+.title{
+    margin: 3rem 0;
+}
+
+.title h5{
+    color: white;
+}

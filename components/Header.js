@@ -64,10 +64,10 @@ const Header = (props) => {
                             {
 
                                 locales.map((locale) => (
-                                    <StyledButton aria-label={`Set language to ${locale}`} variant="button" key={ `language-${locale}` } className="mx-lg-1 text-start text-lg-end" onClick = {
+                                    <StyledButton aria-label={`Set language to ${locale}`} variant="button" key={`language-${locale}`} className="mx-lg-1 text-start text-lg-end" onClick={
                                         () => changeLanguage(locale)
                                     }>
-                                        <i className={ `flag-icon flag-icon-${locale === 'en' ? 'us' : locale}` }></i>
+                                        <i className={`flag-icon flag-icon-${locale === 'en' ? 'us' : locale}`}></i>
                                     </StyledButton>
                                 ))
                             }

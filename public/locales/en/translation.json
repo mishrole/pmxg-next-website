@@ -3,22 +3,56 @@
     "dynamic_value": "It's been {{number_of_days}} days since this app was released",
     "home": "Home",
     "about-us": "About us",
+    "description_v1": "PMXG was founded on June 23, 2005, our team has over 25 years of experience and recognition in the Precious Metals Market. Our experience has allowed us to develop a work philosophy based on the client needs.",
+    "description_v2": "That is why all of our processes have been designed with our client’s different needs in mind, offering tailored solutions and providing permanent support at each stage of the process, helping them to achieve a successful internationalization process.",
+    "description_v3": "From the city of Doral, in South Florida, we serve different markets, from small to large mining companies, as well as precious metal merchants, mainly from Latin America and the United States.",
     "products": "Products",
     "services": "Services",
     "contact": "Contact",
     "login": "Login",
+    "transparency": "transparency",
+    "security": "security",
+    "service": "service",
+    "cost-effectiveness": "cost-effectiveness",
+    "transparency-message": "Integrity and honesty in all our processes.",
+    "security-message": "We establish business relationships based on mutual trust.",
+    "service-message": "Accurate processes designed to optimize time and costs.",
+    "cost-effectiveness-message": "Reliable analysis and payment flexibility.",
+    "our-mission": "Our mission",
+    "offer-clients": "Offer Our Clients:",
     "who-we-are": "Who We Are",
+    "obverse": "Obverse",
+    "reverse": "Reverse",
     "who-we-are_message": "PMXG is a company that was founded in 2005, our team has over 25 years of experience and recognition in the Precious Metals Market. This experience that has allowed us to develop a work philosophy based on better serving our client.",
+    "sell-gold-silver": "Sale of fine gold and silver",
+    "silver-coins": "Pure silver coins",
+    "fundition-bars": "Cast bars",
+    "product": [
+        {
+            "header": "Fine gold 9999",
+            "body": "1 Oz bar",
+            "footer": "Au - 9999 Pure Gold"
+        },
+        {
+            "header": "Fine silver 999",
+            "body": "1 Oz bar",
+            "footer": "Ag - 999 Pure Silver"
+        },
+        {
+            "header": "Fine silver 999",
+            "body": "10 Oz bar",
+            "footer": "Ag - 999 Pure Silver"
+        }
+    ],
     "gold": "Gold",
     "silver": "Silver",
     "platinum": "Platinum",
     "palladium": "Palladium",
-
     "our-services": "Our Services",
     "our-services_message": "PMXG is the best option in the precious metal industry in South Florida.",
     "services-list": [
         {
-            "title": "Our Services", 
+            "title": "Our Services",
             "subtitle": [
                 {
                     "content": "– We buy Gold, Silver, and Platinum at Market prices or London closing."
@@ -29,7 +63,7 @@
             ]
         },
         {
-            "title": "Analysis of Precious Metals", 
+            "title": "Analysis of Precious Metals",
             "subtitle": [
                 {
                     "content": "- We offer agile and precise fire analysis."
@@ -40,7 +74,7 @@
             ]
         },
         {
-            "title": "Consulting and support in International Commerce", 
+            "title": "Consulting and support in International Commerce",
             "subtitle": [
                 {
                     "content": "- Permanent consulting and suuport in the internationalization processes for companies wishing to export for the first time."
@@ -51,15 +85,12 @@
             ]
         }
     ],
-
     "contact-title": "Do you have any questions?",
     "contact-subtitle": "Please click on the button to contact us!",
-
     "footer": {
         "address": "1890 Nw 95 Ave",
         "address_info": "Doral, FL 33172",
         "contact-us-here": "Contact Us Here",
-        "phone": "(305) 556-1696"
+        "phone": "Phone: (305) 556-1696"
     }
-
 }

@@ -19,7 +19,6 @@ const Home = (props) => {
             <Stats></Stats>
             <OurServices></OurServices>
         </>
-        
     )
 }
 
