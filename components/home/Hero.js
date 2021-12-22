@@ -1,29 +1,29 @@
 import styled from 'styled-components';
 import { Carousel } from 'react-bootstrap';
 import { ArrowDown } from 'react-bootstrap-icons';
-import { Link } from 'react-scroll';
+import { Link, animateScroll, scroller } from 'react-scroll';
 import Image from 'next/image';
 
 const StyledCarousel = styled(Carousel)`
+    max-height: 760px;
     position: relative;
     top: 70px;
-    max-height: 760px;
 `;
 
 const StyledCarouselItem = styled(Carousel.Item)`
     // max-height: 760px;
+    display: block;
     min-height: 760px;
     position: relative;
-    display: block;
 `;
 
 const StyledArrowDown = styled(ArrowDown)`
-    color: #FFFFFF;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -ms-transition: 0.25s;
-    -o-transition: 0.25s;
+    color: var(--bs-light);
     transition: 0.25s;
+    -ms-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    -webkit-transition: 0.25s;
 `;
 
 const StyledScrollDownWrapper = styled.div`
@@ -45,30 +45,38 @@ const StyledScrollDownWrapper = styled.div`
     }
 `;
 
-const StyledScrollDown = styled(Link)`
-    background-color: #002764;
-    line-height: 0;
-    color: transparent;
-    font-size: 0;
-    width: 70px;
-    height: 70px;
-    border: 1px solid white;
-    display: block;
-    z-index: 99;
-    border-radius: 90px;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -ms-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-    display: flex;
-    justify-content: center;
+const StyledScrollDown = styled.span`
     align-items: center;
+    background-color: var(--bs-primary-dark);
+    border: 1px solid var(--bs-light);
+    border-radius: 90px;
+    color: transparent;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    line-height: 0;
+    transition: 0.25s;
+    width: 70px;
+    z-index: 99;
+    -ms-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    -webkit-transition: 0.25s;
 `;
 
-// const StyledImage = styled(Image)`
-//     padding: 0 !important;
-// `
+const onClickUp = () => {
+    scroller.scrollToTop();
+}
+
+const scrollToPMXGBanner = (offset) => {
+    scroller.scrollTo("who-we-are", {
+      duration: 500,
+      delay: 0,
+      smooth: 'easeOutElastic',
+      offset: offset,
+      spy: true
+    });
+}
 
 const heroImages = [
     {
@@ -106,7 +114,7 @@ export const Hero = (props) => {
                 }
             </StyledCarousel>
             <StyledScrollDownWrapper>
-                <StyledScrollDown to="who-we-are" smooth={true} duration={1000}>
+                <StyledScrollDown onClick={() => scrollToPMXGBanner(0)}>
                     <StyledArrowDown color="white" size={16} />
                 </StyledScrollDown>
             </StyledScrollDownWrapper>

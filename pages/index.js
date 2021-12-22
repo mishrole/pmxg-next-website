@@ -1,14 +1,16 @@
 import dynamic from 'next/dynamic';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-import { Loader } from '../components/Loader';
-import useInView from 'react-cool-inview';
+// import useInView from 'react-cool-inview';
+// import Loader from '../components/Loader';
 
-const DynamicHero = dynamic(() => import('../components/home/Hero').then((mod) => mod.Hero), { loading: () => <Loader />});
-const DynamicStats = dynamic(() => import('../components/home/Stats').then((mod) => mod.Stats))
-const DynamicOurServices = dynamic(() => import('../components/home/OurServices').then((mod) => mod.OurServices))
-const DynamicKitcoPrices = dynamic(() => import('../components/home/KitcoPrices').then((mod) => mod.KitcoPrices))
-const DynamicContactBanner = dynamic(() => import('../components/home/ContactBanner').then((mod) => mod.ContactBanner))
+// const DynamicLoader = dynamic(() => import('../components/Loader').then((mod) => mod.Loader));
+const DynamicHero = dynamic(() => import('../components/home/Hero').then((mod) => mod.Hero));
+const DynamicStats = dynamic(() => import('../components/home/Stats').then((mod) => mod.Stats));
+const DynamicPMXGBanner = dynamic(() => import('../components/home/PMXGBanner').then((mod) => mod.PMXGBanner));
+const DynamicOurServices = dynamic(() => import('../components/home/OurServices').then((mod) => mod.OurServices));
+const DynamicKitcoPrices = dynamic(() => import('../components/home/KitcoPrices').then((mod) => mod.KitcoPrices));
+const DynamicContactBanner = dynamic(() => import('../components/home/ContactBanner').then((mod) => mod.ContactBanner));
 
 export async function getStaticProps({ locale }) {
     return {
@@ -22,29 +24,12 @@ const Home = (props) => {
 
     const { t } = useTranslation();
 
-    // const { observe, unobserve, inView, scrollDirection, entry } = useInView({
-    //     threshold: 0.25, // Default is 0
-    //     onChange: ({ inView, scrollDirection, entry, observe, unobserve }) => {
-    //       // Triggered whenever the target meets a threshold, e.g. [0.25, 0.5, ...]
-    
-    //       unobserve(); // To stop observing the current target element
-    //       observe(); // To re-start observing the current target element
-    //     },
-    //     onEnter: ({ scrollDirection, entry, observe, unobserve }) => {
-    //       // Triggered when the target enters the viewport
-    //     },
-    //     onLeave: ({ scrollDirection, entry, observe, unobserve }) => {
-    //       // Triggered when the target leaves the viewport
-    //     },
-    //     // More useful options...
-    //   });
-    
-    const { observe, inView } = useInView({
-        unobserveOnEnter: true,
-        rootMargin: "-100px 0px",
-    });
+    // const { observe, inView } = useInView({
+    //     unobserveOnEnter: true,
+    //     rootMargin: "-50px 0px",
+    // });
 
-    console.log(inView);
+    // console.log(observe);
 
     return (
         <>
@@ -59,19 +44,22 @@ const Home = (props) => {
             */}
 
             <DynamicHero />
+            <DynamicPMXGBanner translate={t} />
             <DynamicStats translate={t} />
-            <div ref={observe}>
-                {
-                    inView && <DynamicOurServices translate={t} />
-                }
-                <DynamicKitcoPrices />
-                <DynamicContactBanner translate={t} />
-                
+            <DynamicOurServices translate={t} />
+                    <DynamicKitcoPrices />
+                    <DynamicContactBanner translate={t} />
+            {/* <div ref={ observe }>
+                <DynamicStats translate={t} />
             </div>
-            
-            
+            {
+                inView && <>
+                    <DynamicOurServices translate={t} />
+                    <DynamicKitcoPrices />
+                    <DynamicContactBanner translate={t} />
+                </>
+            } */}
         </>
-        
     )
 }
 
