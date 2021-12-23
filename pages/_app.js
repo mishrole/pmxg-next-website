@@ -4,6 +4,7 @@ import { appWithTranslation } from 'next-i18next';
 // import Router from 'next/router';
 
 import Layout from '../components/Layout';
+import { LanguageProvider } from '../context/LanguageContext';
 // import Loader from '../components/Loader';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -30,12 +31,14 @@ function MyApp({ Component, pageProps }) {
 
     return (
         <>
-            <Layout>
-                {/* {
-                    loading && <Loader />
-                } */}
-                <Component {...pageProps} />
-            </Layout>
+            <LanguageProvider>
+                <Layout>
+                    {/* {
+                        loading && <Loader />
+                    } */}
+                    <Component {...pageProps} />
+                </Layout>
+            </LanguageProvider>
         </>
     )
 }

@@ -8,6 +8,10 @@ const StyledCard = styled(Card)`
     border-radius: 3px;
 `;
 
+const StyledSubtitle = styled.p`
+    font-size: 1.1rem;
+`;
+
 const services = [
     {
         "image": "/assets/images/our-services/DSC_0178.jpg"
@@ -30,7 +34,7 @@ export const OurServices = ({ translate }) => {
             <Container>
                 <Row className="text-center">
                     <h1>{ourServicesTitle}</h1>
-                    <p>{ourServicesMessage}</p>
+                    <StyledSubtitle>{ourServicesMessage}</StyledSubtitle>
                 </Row>
                 <Row className="text-center p-2">
                     {
@@ -43,7 +47,7 @@ export const OurServices = ({ translate }) => {
                                     <Card.Body key={`service-card-body-${index}`}>
                                         <Card.Title key={`service-card-title-${index}`}>{ translate(`home:services-list.${index}.title`) }</Card.Title>
                                         {
-                                            translate(`home:services-list.${index}.subtitle`, {returnObjects: true}).map((element, i) => (
+                                            translate(`home:services-list.${index}.subtitle`, { returnObjects: true }).map((element, i) => (
                                                 <Card.Text key={`service-card-item-${index}-${i}`}>
                                                     {element.content}
                                                 </Card.Text>
