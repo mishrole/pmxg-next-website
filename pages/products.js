@@ -1,6 +1,7 @@
+import styled from 'styled-components';
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import { Button } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 import styles from './../styles/Products.module.css'
 import Head from "next/head";
@@ -14,65 +15,67 @@ export async function getStaticProps({ locale }) {
     }
 }
 
+const StyledCardHeader = styled(Card.Header)`
+    &&& {
+        background-color: var(--bs-light);
+        border: none;
+    }
+`;
+
 const Products = () => {
 
     const { t } = useTranslation();
+    
+    const productsTitle = t('products:title');
+    const categoriesProducts = t('products:categories', { returnObjects: true }).map((element, i) => {
+        return (
+            <Row key={`categories-wrapper-${i}`}>
+                <h1 className={styles.title}>{t(element.title)}</h1>
+                {
+                    t(`products:categories.${i}.products`, { returnObjects: true }).map((productData, index) => {
+                        return (
+                            <Col xs={12} md={6} lg={4} className="p-3" key={`products-wrapper-${index}`}>
+                                <Card>
+                                    <StyledCardHeader>
+                                        <div className="flip-card">
+                                            <div className="flip-card-inner">
+                                                    <Image className="flip-card-front"
+                                                            src={productData.front_image}
+                                                            width={200} height={250} alt="" layout="responsive" objectFit="contain" />
+                                                    <div  className="flip-card-back">
+                                                        <Image
+                                                            src={productData.back_image}
+                                                            width={200} height={250} alt="" layout="responsive" objectFit="contain" />
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </StyledCardHeader>
+                                    <Card.Body>
+                                        <Card.Title className="text-uppercase text-center fw-bold">
+                                            <p>{productData.header}</p>
+                                            <p>{productData.body}</p>
+                                            <p>{productData.footer}</p>
+                                        </Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        )
+                    })
+                }
+            </Row>
+        )
+    });
 
     return (
-        <div className={styles.container}>
+        <>
             <Head>
-                <title>{t('products:products')}</title>
+                <title>{ productsTitle }</title>
             </Head>
-            <h1 className={styles.title}>{t('products:sell-gold-silver')}</h1>
-            <div className={styles.flex}>
-                <div className={styles.content}>
-                    <div>
-                        <Image
-                            src="/assets/images/products/gold_200x400.jpg"
-                            width={200} height={400} />
-                    </div>
-                    <div className={styles.buttons}>
-                        <Button variant="light">
-                            {t('products:obverse')}
-                        </Button>
-                        <Button variant="light">
-                            {t('products:reverse')}
-                        </Button>
-                    </div>
-                </div>
-                <div className={styles.content}>
-                    <div>
-                        <Image
-                            src="/assets/images/products/silver.jpg"
-                            width={200} height={400} />
-                    </div>
-                    <div className={styles.buttons}>
-                        <Button variant="light">
-                            {t('products:obverse')}
-                        </Button>
-                        <Button variant="light">
-                            {t('products:reverse')}
-                        </Button>
-                    </div>
-                </div>
-                <div className={styles.content}>
-                    <div>
-                        <Image
-                            src="/assets/images/products/silver1.jpg"
-                            width={200} height={400} />
-                    </div>
-                    <div className={styles.buttons}>
-                        <Button variant="light">
-                            {t('products:obverse')}
-                        </Button>
-                        <Button variant="light">
-                            {t('products:reverse')}
-                        </Button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+            <Container className="my-5 py-5">
+                { categoriesProducts }
+            </Container>
+        </>
     )
 }
 

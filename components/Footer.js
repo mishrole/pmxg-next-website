@@ -128,6 +128,11 @@ const Footer = ({ translate }) => {
     const aboutUsTitle = translate('common:footer.who-we-are');
     const aboutUsMessage = translate('common:footer.who-we-are_message');
 
+    const footerAddress = translate('common:footer.address');
+    const footerAddressInfo = translate('common:footer.address_info');
+    const footerContactUsCta = translate('common:footer.contact-us-here');
+    const footerPhone = translate('common:footer.phone');
+
     return (
 
         <>
@@ -144,10 +149,10 @@ const Footer = ({ translate }) => {
                             </Col>
                             <Col xs={12}>
                                 <StyledWrapper>
-                                    <StyledSubtitle className="pt-0">{translate('common:footer.address')}</StyledSubtitle>
-                                    <StyledSubtitle className="pt-0">{translate('common:footer.address_info')}</StyledSubtitle>
-                                    <StyledAnchorCta className='pt-0 nav-link' href="https://app.pmxg.com/contact">{translate('common:footer.contact-us-here')}</StyledAnchorCta>
-                                    <StyledSubtitle className="pt-0">{translate('common:footer.phone')}</StyledSubtitle>
+                                    <StyledSubtitle className="pt-0">{footerAddress}</StyledSubtitle>
+                                    <StyledSubtitle className="pt-0">{footerAddressInfo}</StyledSubtitle>
+                                    <StyledAnchorCta className='pt-0 nav-link' href="https://app.pmxg.com/contact">{footerContactUsCta}</StyledAnchorCta>
+                                    <StyledSubtitle className="pt-0">{footerPhone}</StyledSubtitle>
                                 </StyledWrapper>
                             </Col>
                         </Col>

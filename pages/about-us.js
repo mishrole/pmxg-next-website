@@ -49,26 +49,44 @@ const AboutUs = () => {
 
     const { t } = useTranslation();
 
+    const aboutUsTitle = t('about-us:title');
+    const aboutUsMissionTitle = t('about-us:mission.title');
+    const aboutUsMissionSubtitle = t('about-us:mission.subtitle');
+    const descriptionList = t('about-us:description', { returnObjects: true }).map((element, i) => {
+        return (
+            <p key={`about-us_description-${i}`}>
+                {t(element.content)}
+            </p>
+        )
+    });
+    const missionValues = t('about-us:mission.values', { returnObjects: true }).map((element, i) => {
+        return (
+            <div className={styles.cardIcon} key={element.title}>
+                <div className={styles.cardHeader}>
+                    <Image src={element.path} height={50} width={50} />
+                </div>
+                <div className={styles.cardBody}>
+                    <h5 className={styles.subtitle}>{t(element.title)}</h5>
+                    <p className={styles.text}>{t(element.subtitle)}</p>
+                </div>
+            </div>
+        )
+    })
+
     return (
         <>
             <Head>
-                <title>{t('about-us:title')}</title>
+                <title>{ aboutUsTitle }</title>
             </Head>
 
             <div className={`${styles.image} mt-5 pt-5`}>
-                <h1 className={`${styles.title}`}>{t('about-us:title')}</h1>
+                <h1 className={`${styles.title}`}>{ aboutUsTitle }</h1>
             </div>
             
             <Container className="py-5">
                 <Row className="py-5">
                     <Col xs={12} lg={6} className="d-flex align-items-center justify-content-center flex-column">
-                        {
-                            t('about-us:description', { returnObjects: true }).map((element, i) => (
-                                <p key={`about-us_description-${i}`}>
-                                    {t(element.content)}
-                                </p>
-                            ))
-                        }
+                        { descriptionList }
                     </Col>
                     <Col xs={12} lg={6}>
                         <StyledContainer>
@@ -81,25 +99,13 @@ const AboutUs = () => {
 
             <div className={styles.ourMission}>
                 <div className={styles.titles}>
-                    <h2>{t('about-us:mission.title')}</h2><br />
-                    <h3>{t('about-us:mission.subtitle')}</h3>
+                    <h2>{ aboutUsMissionTitle }</h2><br />
+                    <h3>{ aboutUsMissionSubtitle }</h3>
                 </div>
 
                 <Container>
                     <StyledIconsWrapper className={styles.iconsContainer}>
-                        {
-                            t('about-us:mission.values', { returnObjects: true }).map((element, i) => (
-                                <div className={styles.cardIcon} key={element.title}>
-                                    <div className={styles.cardHeader}>
-                                        <Image src={element.path} height={50} width={50} />
-                                    </div>
-                                    <div className={styles.cardBody}>
-                                        <h5 className={styles.subtitle}>{t(element.title)}</h5>
-                                        <p className={styles.text}>{t(element.subtitle)}</p>
-                                    </div>
-                                </div>
-                            ))
-                        }
+                        { missionValues }
                     </StyledIconsWrapper>
                 </Container>
             </div>

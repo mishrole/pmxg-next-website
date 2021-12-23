@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { useRouter } from "next/router";
 import { Container, Navbar, Nav, Button } from "react-bootstrap";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 
 const StyledNavbar = styled(Navbar)`
@@ -71,7 +71,7 @@ const StyledLanguageIcon = styled.i`
 `;
 
 const Header = ({ translate }) => {
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language, setLanguage, menuOpen, setMenuOpen } = useContext(LanguageContext);
 
   const router = useRouter();
   const { locales } = router;
@@ -83,15 +83,44 @@ const Header = ({ translate }) => {
   const contact = translate("common:contact");
   const login = translate("common:login");
 
+  const testElement = useRef();
+
   async function changeLanguage(lang) {
     setLanguage(lang);
+    setMenuOpen(testElement.current.className.includes('show'));
+    console.log(testElement.current.className.includes('show'));
 
     router.replace(router.pathname, router.pathname, {
       locale: lang,
       scroll: false,
     });
+
+    // router.replace(router.pathname, router.pathname, {locale: lang, scroll: false}, { shallow: true })
   }
 
+  const languagesButtons = locales.map((locale, index) => {
+    return (
+      <Link href="" key={`link-language-${locale}-${index}`} scroll={false}>
+        <StyledAnchor
+        key={`language-${locale}`}
+        className="nav-link"
+        onClick={() => changeLanguage(locale)}
+      >
+        <StyledLanguageIcon
+          className={`flag-icon flag-icon-${
+            locale === "en" ? "us" : locale
+          }${language === locale ? " active" : ""}`}
+        ></StyledLanguageIcon>
+      </StyledAnchor>
+    </Link>
+    )
+  });
+  
+    // const NavbarToggler = (e) => {
+    //   // testElement.current.className = menuOpen;
+    //   // setMenuOpen(testElement.current.className.includes('show'));
+    // }
+  
   return (
     <>
       <StyledNavbar bg="white" fixed="top" expand="lg">
@@ -106,14 +135,18 @@ const Header = ({ translate }) => {
                   width={100}
                   height={50}
                   src="/assets/images/pmxg-large-logo.png"
+                  // loading="lazy"
+                  priority
                 ></StyledImage>
               </StyledAnchorSmall>
             </Link>
           </Navbar.Brand>
-          <StyledNavbarToggler aria-controls="navbarScroll" />
+          {/* <StyledNavbarToggler aria-controls="navbarScroll" onClick={(e) => NavbarToggler(e)}/> */}
+          <StyledNavbarToggler aria-controls="navbarScroll"/>
           <Navbar.Collapse
             id="navbarScroll"
-            className="justify-content-lg-end my-3 my-lg-0"
+            className={`justify-content-lg-end my-3 my-lg-0${menuOpen ? ' show' : ''}`}
+            ref={testElement}
           >
             <Nav navbarScroll>
               <Link href="/">
@@ -170,21 +203,9 @@ const Header = ({ translate }) => {
               >
                 {login}
               </StyledAnchor>
-              {locales.map((locale) => (
-                <StyledButton
-                  aria-label={`Set language to ${locale}`}
-                  variant="link"
-                  key={`language-${locale}`}
-                  className="mx-lg-1 text-start text-lg-end"
-                  onClick={() => changeLanguage(locale)}
-                >
-                  <StyledLanguageIcon
-                    className={`flag-icon flag-icon-${
-                      locale === "en" ? "us" : locale
-                    }${language === locale ? " active" : ""}`}
-                  ></StyledLanguageIcon>
-                </StyledButton>
-              ))}
+
+              { languagesButtons }
+
             </Nav>
           </Navbar.Collapse>
         </Container>

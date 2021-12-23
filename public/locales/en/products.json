@@ -1,4 +1,5 @@
 {
+    "title": "Products",
     "obverse": "Obverse",
     "reverse": "Reverse",
     "sell-gold-silver": "Sale of fine gold and silver",
@@ -19,6 +20,117 @@
             "header": "Fine silver 999",
             "body": "10 Oz bar",
             "footer": "Ag - 999 Pure Silver"
+        }
+    ],
+
+    "categories": [
+        {
+            "title": "Sale of fine gold and silver",
+            "products": [
+                {
+                    "header": "Fine gold 9999",
+                    "body": "1 Oz bar",
+                    "footer": "Au - 9999 Pure Gold",
+                    "front_image": "/assets/images/products/fine_gold_1oz.jpg",
+                    "back_image": "/assets/images/products/fine_gold_1oz__back.jpg"
+                },
+                {
+                    "header": "Fine silver 999",
+                    "body": "1 Oz bar",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/fine_silver_1oz.jpg",
+                    "back_image": "/assets/images/products/fine_silver_1oz__back.jpg"
+                },
+                {
+                    "header": "Fine silver 999",
+                    "body": "10 Oz bar",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/fine_silver_10oz.jpg",
+                    "back_image": "/assets/images/products/fine_silver_10oz__back.jpg"
+                }
+            ],
+            "cta": "Contact us for more information"
+        },
+        {
+            "title": "Pure silver coins",
+            "products": [
+                {
+                    "header": "Pure silver 999",
+                    "body": "1 Oz coin",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/pure_silver_coin_1oz.jpg",
+                    "back_image": "/assets/images/products/pure_silver_coin_1oz__back.jpg"
+                },
+                {
+                    "header": "Fine silver 999",
+                    "body": "1 Oz Buffalo coin",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-1.jpg",
+                    "back_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-1__back.jpg"
+                },
+                {
+                    "header": "Fine silver 999",
+                    "body": "10 Oz Buffalo coin",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-2.jpg",
+                    "back_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-2__back.jpg"
+                }
+            ],
+            "cta": "Contact us for more information"
+        },
+        {
+            "title": "Cast bars",
+            "products": [
+                {
+                    "header": "10 oz BAR",
+                    "body": "Au - 9999 Pure Gold",
+                    "footer": "9950 Pure Gold",
+                    "front_image": "/assets/images/products/pure_gold_bar_10oz.jpg",
+                    "back_image": "/assets/images/products/pure_gold_bar_10oz.jpg"
+                },
+                {
+                    "header": "1kg BAR",
+                    "body": "Au - 9999 Pure Gold, 9950 Pure Gold",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/pure_gold_bar_1kg.jpg",
+                    "back_image": "/assets/images/products/pure_silver_bar_1kg.jpg"
+                },
+                {
+                    "header": "100 oz BAR",
+                    "body": "Au - 9999 Pure Gold, 9950 Pure Gold",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/pure_gold_bar_100oz.jpg",
+                    "back_image": "/assets/images/products/pure_silver_bar_100oz.jpg"
+                }
+            ],
+            "cta": "Contact us for more information"
+        },
+        {
+            "title": "Other",
+            "products": [
+                {
+                    "header": "400 oz BAR",
+                    "body": "Au - 9999 Pure Gold",
+                    "footer": "9950 Pure Gold",
+                    "front_image": "/assets/images/products/pure_gold_bar_400oz.jpg",
+                    "back_image": "/assets/images/products/pure_gold_bar_400oz.jpg"
+                },
+                {
+                    "header": "1000 oz BAR",
+                    "body": "Ag - 999 Pure Silver",
+                    "footer": " ",
+                    "front_image": "/assets/images/products/pure_silver_1000oz.jpg",
+                    "back_image": "/assets/images/products/pure_silver_1000oz.jpg"
+                },
+                {
+                    "header": "Fine Grain",
+                    "body": "Au - 9999 Pure Gold",
+                    "footer": "Ag - 999 Pure Silver",
+                    "front_image": "/assets/images/products/pure_gold_grain.jpg",
+                    "back_image": "/assets/images/products/pure_silver_grain.jpg"
+                }
+            ],
+            "cta": "Contact us for more information"
         }
     ]
 }

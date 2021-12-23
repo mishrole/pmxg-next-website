@@ -1,4 +1,5 @@
 {
+    "title": "Productos",
     "obverse": "Anverso",
     "reverse": "Reverso",
     "sell-gold-silver": "Venta de oro y plata fina",
@@ -19,6 +20,117 @@
             "header": "Plata fina 999",
             "body": "10 Oz barra",
             "footer": "Ag - 999 Plata pura"
+        }
+    ],
+
+    "categories": [
+        {
+            "title": "Venta de oro y plata fina",
+            "products": [
+                {
+                    "header": "Oro fino 9999",
+                    "body": "1 Oz barra",
+                    "footer": "Au - 9999 Oro puro",
+                    "front_image": "/assets/images/products/fine_gold_1oz.jpg",
+                    "back_image": "/assets/images/products/fine_gold_1oz__back.jpg"
+                },
+                {
+                    "header": "Plata fina 999",
+                    "body": "1 Oz barra",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/fine_silver_1oz.jpg",
+                    "back_image": "/assets/images/products/fine_silver_1oz__back.jpg"
+                },
+                {
+                    "header": "Pla fina 999",
+                    "body": "10 Oz barra",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/fine_silver_10oz.jpg",
+                    "back_image": "/assets/images/products/fine_silver_10oz__back.jpg"
+                }
+            ],
+            "categoryCta": "Contáctenos para más información de compra"
+        },
+        {
+            "title": "Monedas de plata fina",
+            "products": [
+                {
+                    "header": "Plata fina 999",
+                    "body": "1 Oz moneda",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/pure_silver_coin_1oz.jpg",
+                    "back_image": "/assets/images/products/pure_silver_coin_1oz__back.jpg"
+                },
+                {
+                    "header": "Plata fina 999",
+                    "body": "1 Oz Moneda Buffalo",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-1.jpg",
+                    "back_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-1__back.jpg"
+                },
+                {
+                    "header": "Plata fina 999",
+                    "body": "10 Oz Moneda Buffalo",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-2.jpg",
+                    "back_image": "/assets/images/products/pure_silver_buffalo-coin_1oz-2__back.jpg"
+                }
+            ],
+            "categoryCta": "Contáctenos para más información de compra"
+        },
+        {
+            "title": "Barras de fundición",
+            "products": [
+                {
+                    "header": "10 oz BARRA",
+                    "body": "Au - 9999 Oro puro",
+                    "footer": "9950 Oro puro",
+                    "front_image": "/assets/images/products/pure_gold_bar_10oz.jpg",
+                    "back_image": "/assets/images/products/pure_gold_bar_10oz.jpg"
+                },
+                {
+                    "header": "1kg BARRA",
+                    "body": "Au - 9999 Oro puro, 9950 Oro puro",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/pure_gold_bar_1kg.jpg",
+                    "back_image": "/assets/images/products/pure_silver_bar_1kg.jpg"
+                },
+                {
+                    "header": "100 oz BARRA",
+                    "body": "Au - 9999 Oro puro, 9950 Oro puro",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/pure_gold_bar_100oz.jpg",
+                    "back_image": "/assets/images/products/pure_silver_bar_100oz.jpg"
+                }
+            ],
+            "categoryCta": "Contáctenos para más información de compra"
+        },
+        {
+            "title": "Other",
+            "products": [
+                {
+                    "header": "400 oz BARRA",
+                    "body": "Au - 9999 Oro puro",
+                    "footer": "9950 Oro puro",
+                    "front_image": "/assets/images/products/pure_gold_bar_400oz.jpg",
+                    "back_image": "/assets/images/products/pure_gold_bar_400oz.jpg"
+                },
+                {
+                    "header": "1000 oz BARRA",
+                    "body": "Ag - 999 Plata pura",
+                    "footer": " ",
+                    "front_image": "/assets/images/products/pure_silver_1000oz.jpg",
+                    "back_image": "/assets/images/products/pure_silver_1000oz.jpg"
+                },
+                {
+                    "header": "Granos finos",
+                    "body": "Au - 9999 Oro puro",
+                    "footer": "Ag - 999 Plata pura",
+                    "front_image": "/assets/images/products/pure_gold_grain.jpg",
+                    "back_image": "/assets/images/products/pure_silver_grain.jpg"
+                }
+            ],
+            "categoryCta": "Contáctenos para más información de compra"
         }
     ]
 }

@@ -48,22 +48,24 @@ const kitcoImages = [
 
 export const Stats = ({ translate }) => {
 
+    const statsList = kitcoImages.map(({translation, url, alt, connecting}) => {
+        return (
+            <Col xs={12} md={6} lg={3} className="p-2 d-block" key={translation}>
+                <h3>{translate(translation)}</h3>
+                <StyledAnchor href={connecting}>
+                    <StyledImage alt={alt} src={url} layout="responsive" objectFit="scale-down" width={50} height={50} />
+                </StyledAnchor>
+            </Col>
+        )
+    });
+
     return (
         <>
-                <Container className="py-5 text-center">
-                    <Row>
-                        {
-                            kitcoImages.map(({translation, url, alt, connecting}) => (
-                                <Col xs={12} md={6} lg={3} className="p-2 d-block" key={translation}>
-                                    <h3>{translate(translation)}</h3>
-                                    <StyledAnchor href={connecting}>
-                                        <StyledImage alt={alt} src={url} layout="responsive" objectFit="scale-down" width={50} height={50} />
-                                    </StyledAnchor>
-                                </Col>
-                            ))
-                        }
-                    </Row>
-                </Container>
+            <Container className="py-5 text-center">
+                <Row>
+                    { statsList }
+                </Row>
+            </Container>
         </>
     )
 }
