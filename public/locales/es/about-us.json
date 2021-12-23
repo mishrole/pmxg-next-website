@@ -18,22 +18,22 @@
             {
                 "title": "Transparencia",
                 "subtitle": "Integridad y honestidad en todos nuestros procesos.",
-                "icon": "bx bx-star"
+                "path": "/assets/icons/star.svg"
             },
             {
                 "title": "Security",
                 "subtitle": "Establecemos relaciones comerciales basadas en confianza mutua.",
-                "icon": "bx bx-lock"
+                "path": "/assets/icons/lock.svg"
             },
             {
                 "title": "Service",
                 "subtitle": "Procesos precisos diseñados para optimizar tiempos y costos.",
-                "icon": "bx bx-like"
+                "path": "/assets/icons/like.svg"
             },
             {
                 "title": "Cost Effectiveness",
                 "subtitle": "Análisis confiables y agilidad en los pagos.",
-                "icon": "bx bx-key"
+                "path": "/assets/icons/key.svg"
             }
         ]
     }
