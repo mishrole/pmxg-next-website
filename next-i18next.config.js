@@ -5,10 +5,6 @@ module.exports = {
     },
     ns: ['common', 'home', 'about-us'],
     react: {
-        useSuspense: true,
-      },
-      debug: false,
-      interpolation: {
-        escapeValue: false
-      }
+      useSuspense: false,
+    }
 }

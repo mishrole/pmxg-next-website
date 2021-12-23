@@ -1,8 +1,18 @@
 import styled from 'styled-components';
+import Image from 'next/image';
+
 import { Carousel } from 'react-bootstrap';
 import { ArrowDown } from 'react-bootstrap-icons';
-import { Link, animateScroll, scroller } from 'react-scroll';
-import Image from 'next/image';
+// import { Link, animateScroll, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
+
+import GoldFurnance from '../../public/assets/images/carousel/small_gold_furnance.jpg';
+import TestingGold from '../../public/assets/images/carousel/testing_gold-scaled.jpg';
+import ChemicalTesting from '../../public/assets/images/carousel/gold-chemical-testing.jpg';
+import MeltingPureGold from '../../public/assets/images/carousel/melting-pure-gold.jpg';
+import MeltingGold from '../../public/assets/images/carousel/melting_gold-scaled.jpg';
+
+
 
 const StyledCarousel = styled(Carousel)`
     max-height: 760px;
@@ -80,22 +90,27 @@ const scrollToPMXGBanner = (offset) => {
 
 const heroImages = [
     {
+        'component': GoldFurnance,
         'url': '/assets/images/carousel/small_gold_furnance.jpg',
         'alt': 'Small Gold Furnance'
     },
     {
+        'component': TestingGold,
         'url': '/assets/images/carousel/testing_gold-scaled.jpg',
         'alt': 'Testing Gold Scaled'
     },
     {
+        'component': ChemicalTesting,
         'url': '/assets/images/carousel/gold-chemical-testing.jpg',
         'alt': 'Gold Chemical Testing'
     },
     {
+        'component': MeltingPureGold,
         'url': '/assets/images/carousel/melting-pure-gold.jpg',
         'alt': 'Melting Pure Gold'
     },
     {
+        'component': MeltingGold,
         'url': '/assets/images/carousel/melting_gold-scaled.jpg',
         'alt': 'Melting Gold Scaled'
     }
@@ -106,9 +121,9 @@ export const Hero = (props) => {
         <>
             <StyledCarousel indicators={false} interval={10000} fade={true}>
                 {
-                    heroImages.map(({url, alt}, index) => (
+                    heroImages.map(({component, url, alt}, index) => (
                         <StyledCarouselItem key={`hero-carousel-item-${index}`}>
-                            <Image src={url} alt={alt} priority={index === 0 && true} layout="fill" objectFit="cover"></Image>
+                            <Image src={component} alt={alt} priority={index === 0 && true} layout="fill" objectFit="cover" sizes="50vw"></Image>
                         </StyledCarouselItem>
                     ))
                 }

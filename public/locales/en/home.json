@@ -46,13 +46,5 @@
 
     "contact-title": "Do you have any questions?",
     "contact-subtitle": "Please click on the button to contact us!",
-    "contact-cta": "Contact",
-
-    "footer": {
-        "address": "1890 Nw 95 Ave",
-        "address_info": "Doral, FL 33172",
-        "contact-us-here": "Contact Us Here",
-        "phone": "(305) 556-1696"
-    }
-
+    "contact-cta": "Contact"
 }

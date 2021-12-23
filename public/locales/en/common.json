@@ -6,5 +6,14 @@
     "products": "Products",
     "services": "Services",
     "contact": "Contact",
-    "login": "Login"
+    "login": "Login",
+
+    "footer": {
+        "address": "1890 Nw 95 Ave",
+        "address_info": "Doral, FL 33172",
+        "contact-us-here": "Contact Us Here",
+        "phone": "Phone: (305) 556-1696",
+        "who-we-are": "About us",
+        "who-we-are_message": "PMXG is a company that was founded in 2005, our team has over 25 years of experience and recognition in the Precious Metals Market. This experience that has allowed us to develop a work philosophy based on better serving our client."
+    }
 }
