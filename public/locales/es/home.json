@@ -1,6 +1,7 @@
 {
     "who-we-are": "¿Quiénes Somos?",
     "who-we-are_message": "PMXG es una compañía fundada en el 2005, cuyo equipo de trabajo cuenta con una experiencia y reconocimientos de más de 25 años en el Mercado de Metales Preciosos. Experiencia que le ha permitido desarrollar una filisofía de trabajo basada en el cliente.",
+    
     "gold": "Oro",
     "silver": "Plata",
     "platinum": "Platino",
@@ -10,7 +11,7 @@
     "our-services_message": "PMXG es la mejor opción en la industria de metales preciosos en el Sur de la Florida.",
     "services-list": [
         {
-            "title": "Nuestros Servicios", 
+            "title": "Nuestros Servicios",
             "subtitle": [
                 {
                     "content": "– Compramos Oro, Plata y Platino a precios de Mercado o cierre de Londres."
@@ -21,7 +22,7 @@
             ]
         },
         {
-            "title": "Análisis de Metales Preciosos", 
+            "title": "Análisis de Metales Preciosos",
             "subtitle": [
                 {
                     "content": "- Ofrecemos servicio de analísis de fuego ágiles y precisos."
@@ -32,7 +33,7 @@
             ]
         },
         {
-            "title": "Asesoría y acompañamiento en Comercio Internacional", 
+            "title": "Asesoría y acompañamiento en Comercio Internacional",
             "subtitle": [
                 {
                     "content": "- Asesoría permamente y acompañamiento en procesos de internacionalización para compañías que deseen exportar por primera vez."
@@ -43,7 +44,6 @@
             ]
         }
     ],
-
     "contact-title": "¿Tienes alguna pregunta específica?",
     "contact-subtitle": "Haga click en el botón para contactarnos.",
     "contact-cta": "Contacto"

@@ -1,0 +1,24 @@
+{
+    "obverse": "Anverso",
+    "reverse": "Reverso",
+    "sell-gold-silver": "Venta de oro y plata fina",
+    "silver-coins": "Monedas de plata fina",
+    "fundition-bars": "Barras de fundición",
+    "product": [
+        {
+            "header": "Oro fino 9999",
+            "body": "1 Oz barra",
+            "footer": "Au - 9999 Oro puro"
+        },
+        {
+            "header": "Plata fina 999",
+            "body": "1 Oz barra",
+            "footer": "Ag - 999 Plata pura"
+        },
+        {
+            "header": "Plata fina 999",
+            "body": "10 Oz barra",
+            "footer": "Ag - 999 Plata pura"
+        }
+    ]
+}

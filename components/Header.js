@@ -112,7 +112,7 @@ const Header = ({ translate }) => {
                                     <StyledButton aria-label={`Set language to ${locale}`} variant="link" key={ `language-${locale}` } className="mx-lg-1 text-start text-lg-end" onClick = {
                                         () => changeLanguage(locale)
                                     }>
-                                        <i className={ `flag-icon flag-icon-${locale === 'en' ? 'us' : locale}` }></i>
+                                        <i className={`flag-icon flag-icon-${locale === 'en' ? 'us' : locale}`}></i>
                                     </StyledButton>
                                 ))
                             }

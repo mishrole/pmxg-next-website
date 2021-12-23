@@ -3,7 +3,7 @@ module.exports = {
         locales: ["en", "es"],
         defaultLocale: "es"
     },
-    ns: ['common', 'home', 'about-us'],
+    ns: ['common', 'home', 'about-us', 'products'],
     react: {
       useSuspense: false,
     }

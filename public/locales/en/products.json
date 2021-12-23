@@ -1,0 +1,24 @@
+{
+    "obverse": "Obverse",
+    "reverse": "Reverse",
+    "sell-gold-silver": "Sale of fine gold and silver",
+    "silver-coins": "Pure silver coins",
+    "fundition-bars": "Cast bars",
+    "product": [
+        {
+            "header": "Fine gold 9999",
+            "body": "1 Oz bar",
+            "footer": "Au - 9999 Pure Gold"
+        },
+        {
+            "header": "Fine silver 999",
+            "body": "1 Oz bar",
+            "footer": "Ag - 999 Pure Silver"
+        },
+        {
+            "header": "Fine silver 999",
+            "body": "10 Oz bar",
+            "footer": "Ag - 999 Pure Silver"
+        }
+    ]
+}
