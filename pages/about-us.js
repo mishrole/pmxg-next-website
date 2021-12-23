@@ -31,6 +31,20 @@ const StyledContainer = styled(Container)`
     }
 `;
 
+const StyledIconsWrapper = styled.div`
+    @media ${device.mobileS} {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    @media ${device.tablet} {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media ${device.laptop} {
+        grid-template-columns: repeat(4,1fr) !important;
+    }
+`;
+
 const AboutUs = () => {
 
     const { t } = useTranslation();
@@ -50,10 +64,9 @@ const AboutUs = () => {
                     <Col xs={12} lg={6} className="d-flex align-items-center justify-content-center flex-column">
                         {
                             t('about-us:description', { returnObjects: true }).map((element, i) => (
-                                
-                                    <p key={`description-${i}`}>
-                                        {t(element.content)}
-                                    </p>
+                                <p key={`about-us_description-${i}`}>
+                                    {t(element.content)}
+                                </p>
                             ))
                         }
                     </Col>
@@ -64,21 +77,6 @@ const AboutUs = () => {
                     </Col>
                     
                 </Row>
-                {/* <div className={styles.textContainer}>
-                    <div className={styles.description}>
-                        {
-                            t('about-us:description', { returnObjects: true }).map((element, i) => (
-                                <p key={`description-${i}`}>
-                                    {t(element.content)}
-                                </p>
-                            ))
-                        }
-                    </div>
-
-                    <div className={styles.imageContainer}>
-                        <Image src="/assets/images/about-us/scientist.jpg" layout="responsive" objectFit="contain" width="200" height="200" />
-                    </div>
-                </div> */}
             </Container>
 
             <div className={styles.ourMission}>
@@ -88,7 +86,7 @@ const AboutUs = () => {
                 </div>
 
                 <Container>
-                    <div className={styles.iconsContainer}>
+                    <StyledIconsWrapper className={styles.iconsContainer}>
                         {
                             t('about-us:mission.values', { returnObjects: true }).map((element, i) => (
                                 <div className={styles.cardIcon} key={element.title}>
@@ -102,7 +100,7 @@ const AboutUs = () => {
                                 </div>
                             ))
                         }
-                    </div>
+                    </StyledIconsWrapper>
                 </Container>
             </div>
         </>

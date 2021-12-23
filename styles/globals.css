@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   color: var(--bs-dark);
-  font-family: 'Open sans', sans-serif;
+  font-family: 'Open sans', Helvetica, Arial, sans-serif;
 }
 
 * {
