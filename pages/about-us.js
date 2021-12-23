@@ -29,7 +29,7 @@ const AboutUs = () => {
                 <div className={styles.description}>
                     {
                         t('about-us:description', { returnObjects: true }).map((element, i) => (
-                            <p>
+                            <p key={`description-${i}`}>
                                 {t(element.content)}
                             </p>
                         ))
