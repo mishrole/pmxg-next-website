@@ -17,19 +17,23 @@
         "values": [
             {
                 "title": "Transparencia",
-                "subtitle": "Integridad y honestidad en todos nuestros procesos."
+                "subtitle": "Integridad y honestidad en todos nuestros procesos.",
+                "icon": "bx bx-star"
             },
             {
                 "title": "Security",
-                "subtitle": "Establecemos relaciones comerciales basadas en confianza mutua."
+                "subtitle": "Establecemos relaciones comerciales basadas en confianza mutua.",
+                "icon": "bx bx-lock"
             },
             {
                 "title": "Service",
-                "subtitle": "Procesos precisos diseñados para optimizar tiempos y costos."
+                "subtitle": "Procesos precisos diseñados para optimizar tiempos y costos.",
+                "icon": "bx bx-like"
             },
             {
                 "title": "Cost Effectiveness",
-                "subtitle": "Análisis confiables y agilidad en los pagos."
+                "subtitle": "Análisis confiables y agilidad en los pagos.",
+                "icon": "bx bx-key"
             }
         ]
     }

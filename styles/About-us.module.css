@@ -49,7 +49,7 @@
 
 .ourMission{
     background: #273e74;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 85px;
     overflow: hidden;
     position: relative;
@@ -87,9 +87,14 @@
     background: #ffffff;
     text-align: center;
     margin: auto;
-    width: 50%;
     border-radius: 100%;
     padding: 50px;
+
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ourMission .iconsContainer .cardHeader i{
