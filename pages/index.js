@@ -47,8 +47,9 @@ const Home = () => {
             <DynamicPMXGBanner translate={t} />
             <DynamicStats translate={t} />
             <DynamicOurServices translate={t} />
-                    <DynamicKitcoPrices />
-                    <DynamicContactBanner translate={t} />
+            <DynamicKitcoPrices />
+            <DynamicContactBanner translate={t} />
+            
             {/* <div ref={ observe }>
                 <DynamicStats translate={t} />
             </div>

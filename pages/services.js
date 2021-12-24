@@ -1,12 +1,11 @@
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import styled from 'styled-components';
-import { device } from '../util/mediaQueries';
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-
-import styles from './../styles/Services.module.css';
+import { Container, Row, Col, Card } from "react-bootstrap";
 import Head from "next/head";
-import Image from "next/image";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { device } from '../util/mediaQueries';
+import styles from './../styles/Services.module.css';
+// import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
     return {
@@ -15,7 +14,6 @@ export async function getStaticProps({ locale }) {
         }
     }
 }
-
 
 const StyledCtaButton = styled.a`
     &&& {
@@ -47,6 +45,27 @@ const StyledCtaButton = styled.a`
     }
 `;
 
+const StyledContactTitle = styled.h2`
+    margin-bottom: 1.6rem;
+    color: var(--bs-light) !important;
+    padding: 0 1em;
+
+    @media ${device.mobileS} {
+        padding: 0 2em;
+    }
+
+    @media ${device.mobileM} {
+        padding: 0 3em;
+    }
+
+    @media ${device.tablet} {
+        padding: 0 6em;
+    }
+
+    @media ${device.laptop} {
+        padding: 0 30vw;
+    }
+`;
 
 const Services = () => {
 
@@ -56,28 +75,26 @@ const Services = () => {
     const ourServiceTitle = t('services:description.our-service');
     const ourServiceContent = t('services:description.subtitle');
 
-    const questiontTitle = t('services:question')
+    const questionTitle = t('services:question')
     const contact = t('services:question_text')
     const cta = t('services:cta')
 
     const description = t('services:description.values', { returnObjects: true }).map((element, i) => {
         return (
-            <Row className={styles.row}>
-                <Col>
-                    <Card className={styles.card}>
-                        <Card.Img variant="top" src={element.image} />
-                        <Card.Body className={styles.cardBody}>
-                            <Card.Title className={styles.cardTitle}>{t(element.title)}</Card.Title>
-                            <Card.Text className={styles.cardText}>
-                                {t(element.sub_description_1)}
-                            </Card.Text>
-                            <Card.Text className={styles.cardText}>
-                                {t(element.sub_description_2)}
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
+            <Col xs={12} lg={4} key={`services-${i}`} className="p-3 p-lg-4">
+                <Card className={styles.card}>
+                    <Card.Img variant="top" src={element.image} />
+                    <Card.Body className={styles.cardBody}>
+                        <Card.Title className={styles.cardTitle}>{t(element.title)}</Card.Title>
+                        <Card.Text className={styles.cardText}>
+                            {t(element.sub_description_1)}
+                        </Card.Text>
+                        <Card.Text className={styles.cardText}>
+                            {t(element.sub_description_2)}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Col>
         )
     });
 
@@ -94,29 +111,28 @@ const Services = () => {
                 </h1>
             </div>
 
-            <div className={styles.ourServices}>
-                <div className={styles.titles}>
-                    <h2>{ourServiceTitle}</h2><br />
-                    <h3>{ourServiceContent}</h3>
+            <div className={ styles.ourServices }>
+                <div className={ styles.titles }>
+                    <h2> {ourServiceTitle }</h2>
+                    <h3>{ ourServiceContent }</h3>
                 </div>
-                <Container className={`${styles.containerCards} py-5`}>
-                    {description}
+                <Container className="py-5">
+                    <Row>
+                        { description }
+                    </Row>
                 </Container>
             </div>
 
-            <div className={styles.contact}>
-                <div className={styles.subtitles}>
-                    <h2>
-                        {questiontTitle}
-                    </h2>
-                    <h5>{contact}</h5>
+            <Container className={ styles.contact } fluid>
+                <div className={`d-flex justify-content-center flex-column text-center ${styles.subtitles}`}>
+                    <StyledContactTitle>{ questionTitle }</StyledContactTitle>
+                    <Container><h5>{ contact }</h5></Container>
                 </div>
 
                 <StyledCtaButton className='btn btn-primary d-flex justify-content-center align-items-center mt-5' href='https://app.pmxg.com/contact'>
-                    {cta}
+                    { cta }
                 </StyledCtaButton>
-            </div>
-
+            </Container>
         </>
     )
 }
