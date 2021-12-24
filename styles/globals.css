@@ -81,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
   --bs-primary-dark: #002764;
   --bs-light: #FFFFFF;
   --bs-dark: #333333;
-  --bs-dark-shadow: #3333338c;
-  --bs-gray-light: #AAAAAA;
+  /* --bs-dark-shadow: #3333338c; */
+  --bs-dark-shadow: #767676;
+  --bs-gray-light: #AAAAAA; 
 }

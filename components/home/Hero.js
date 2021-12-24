@@ -114,23 +114,23 @@ const heroImages = [
   },
 ];
 
-export const Hero = (props) => {
+const heroCarouselImages = heroImages.map(({ component, url, alt }, index) => {
+  return (
+    <StyledCarouselItem key={`hero-carousel-item-${index}`}>
+      <Image
+        src={component}
+        alt={alt}
+        layout="fill"
+        objectFit="cover"
+        sizes="50vw"
+        loading="eager"
+        priority={index === 0 ? true : false}
+      ></Image>
+    </StyledCarouselItem>
+  )
+});
 
-  const heroCarouselImages = heroImages.map(({ component, url, alt }, index) => {
-    return (
-      <StyledCarouselItem key={`hero-carousel-item-${index}`}>
-        <Image
-          src={component}
-          alt={alt}
-          layout="fill"
-          objectFit="cover"
-          sizes="50vw"
-        //   loading="lazy"
-            priority
-        ></Image>
-      </StyledCarouselItem>
-    )
-  });
+export const Hero = (props) => {
 
   return (
     <>

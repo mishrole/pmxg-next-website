@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useRouter } from "next/router";
-import { Container, Navbar, Nav, Button } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { useContext, useRef } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 
@@ -13,7 +13,7 @@ const StyledNavbar = styled(Navbar)`
   padding: 20px 0;
 `;
 
-const StyledButton = styled(Button)`
+const StyledButton = styled.button`
   &:focus {
     box-shadow: none;
   }
@@ -62,11 +62,13 @@ const StyledImage = styled(Image)`
 
 const StyledLanguageIcon = styled.i`
   filter: saturate(0);
-  cursor: pointer;
+  // cursor: pointer;
+  cursor: initial;
 
   &&&.active {
     filter: saturate(1);
-    cursor: initial;
+    // cursor: initial;
+    cursor: pointer;
   }
 `;
 
@@ -86,13 +88,14 @@ const Header = ({ translate }) => {
   const testElement = useRef();
 
   async function changeLanguage(lang) {
+
     setLanguage(lang);
     setMenuOpen(testElement.current.className.includes('show'));
     console.log(testElement.current.className.includes('show'));
 
-    router.replace(router.pathname, router.pathname, {
+    router.push(router.pathname, router.pathname, {
       locale: lang,
-      scroll: false,
+      scroll: false
     });
 
     // router.replace(router.pathname, router.pathname, {locale: lang, scroll: false}, { shallow: true })
@@ -100,19 +103,25 @@ const Header = ({ translate }) => {
 
   const languagesButtons = locales.map((locale, index) => {
     return (
-      <Link href="" key={`link-language-${locale}-${index}`} scroll={false}>
-        <StyledAnchor
-        key={`language-${locale}`}
-        className="nav-link"
-        onClick={() => changeLanguage(locale)}
-      >
+      <StyledButton aria-label={`language-${locale}`} className="btn" key={`language-${locale}`} onClick={() => changeLanguage(locale)}>
         <StyledLanguageIcon
           className={`flag-icon flag-icon-${
             locale === "en" ? "us" : locale
-          }${language === locale ? " active" : ""}`}
+          }${language === locale ? "" : " active"}`}
         ></StyledLanguageIcon>
-      </StyledAnchor>
-    </Link>
+      </StyledButton>
+    //   <Link href="/" key={`link-language-${locale}-${index}`} scroll={false}>
+    //   <StyledAnchor
+    //     key={`language-${locale}`}
+    //     className="nav-link"
+    //     onClick={() => changeLanguage(locale)}>
+    //     <StyledLanguageIcon
+    //       className={`flag-icon flag-icon-${
+    //         locale === "en" ? "us" : locale
+    //       }${language === locale ? " active" : ""}`}
+    //     ></StyledLanguageIcon>
+    //   </StyledAnchor>
+    // </Link>
     )
   });
   
@@ -135,7 +144,7 @@ const Header = ({ translate }) => {
                   width={100}
                   height={50}
                   src="/assets/images/pmxg-large-logo.png"
-                  // loading="lazy"
+                  loading="eager"
                   priority
                 ></StyledImage>
               </StyledAnchorSmall>

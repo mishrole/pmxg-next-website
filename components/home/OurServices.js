@@ -34,7 +34,7 @@ export const OurServices = ({ translate }) => {
             <Col xs={12} md={4} className="p-3" key={`service-wrapper-${index}`}>
                 <StyledCard key={`service-card-${index}`}>
                     <div>
-                        <Image priority={index === 0 && true} className="card-img-top" src={image} key={`service-card-image-${index}`} alt="" layout="responsive" objectFit="scale-down" width="100" height="65"/>
+                        <Image priority={index === 0 && true} className="card-img-top" src={image} key={`service-card-image-${index}`} alt="Our services" layout="responsive" objectFit="scale-down" width="100" height="65" loading="eager"/>
                     </div>
                     <Card.Body key={`service-card-body-${index}`}>
                         <Card.Title key={`service-card-title-${index}`}>{ translate(`home:services-list.${index}.title`) }</Card.Title>
