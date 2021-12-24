@@ -1,0 +1,27 @@
+{
+    "title": "Services",
+    "description": {
+        "our-service": "Our services",
+        "subtitle": "Trading of Gold, Silver and Platinum",
+        "values": [
+            {
+                "image": "/assets/images/services/first_service.jpg",
+                "title": "Trading of Gold, Silver and Platinum",
+                "sub_description_1": "- We buy Gold, Silver, and Platinum at Market prices or London closing.",
+                "sub_description_2": "- We sell precious metals to the industry."
+            },
+            {
+                "image": "/assets/images/services/second_service.jpg",
+                "title": "Analysis of Precious Metals",
+                "sub_description_1": "- Analysis of Precious Metals",
+                "sub_description_2": "- Utilizing modern induction equipment, we guarantee a minimum percentage of shrinkage in our processes."
+            },
+            {
+                "image": "/assets/images/services/third_service.jpg",
+                "title": "Consulting and support in International Commerce",
+                "sub_description_1": "- Permanent consulting and suuport in the internationalization processes for companies wishing to export for the first time.",
+                "sub_description_2": "- Anti-Money Laundering Program that works to strengthen both parties in a detailed and complete way."
+            }
+        ]
+    }
+}

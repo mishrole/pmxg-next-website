@@ -76,36 +76,36 @@ const AboutUs = () => {
     return (
         <>
             <Head>
-                <title>{ aboutUsTitle }</title>
+                <title>{aboutUsTitle}</title>
             </Head>
 
             <div className={`${styles.image} mt-5 pt-5`}>
-                <h1 className={`${styles.title}`}>{ aboutUsTitle }</h1>
+                <h1 className={`${styles.title}`}>{aboutUsTitle}</h1>
             </div>
-            
+
             <Container className="py-5">
                 <Row className="py-5">
                     <Col xs={12} lg={6} className="d-flex align-items-center justify-content-center flex-column">
-                        { descriptionList }
+                        {descriptionList}
                     </Col>
                     <Col xs={12} lg={6}>
                         <StyledContainer>
                             <Image src="/assets/images/about-us/scientist.jpg" layout="responsive" objectFit="contain" width="200" height="200" />
                         </StyledContainer>
                     </Col>
-                    
+
                 </Row>
             </Container>
 
             <div className={styles.ourMission}>
                 <div className={styles.titles}>
-                    <h2>{ aboutUsMissionTitle }</h2><br />
-                    <h3>{ aboutUsMissionSubtitle }</h3>
+                    <h2>{aboutUsMissionTitle}</h2><br />
+                    <h3>{aboutUsMissionSubtitle}</h3>
                 </div>
 
                 <Container>
                     <StyledIconsWrapper className={styles.iconsContainer}>
-                        { missionValues }
+                        {missionValues}
                     </StyledIconsWrapper>
                 </Container>
             </div>
