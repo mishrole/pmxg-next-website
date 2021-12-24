@@ -55,7 +55,9 @@ const Services = () => {
                     {servicesTitle}
                 </title>
             </Head>
-
+            <Container>
+                {description}
+            </Container>
             {/* <div className={`${styles.image} mt-5 pt-5`}>
                 <h1 className={`${styles.title}`}>
                     {ourServiceTitle}
