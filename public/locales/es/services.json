@@ -1,25 +1,30 @@
 {
     "title": "Servicios",
-    "our-service": "Nuestros servicios",
-    "subtitle": "Comercializacion de Oro, Plata y Platino",
-    "description": [
-        {
-            "image": "/assets/images/services/first_service.jpg",
-            "title": "Comercializacion de Oro, Plata y Platino",
-            "sub_description_1": "- Compramos Oro, Plata y Platino a precios de Mercado o cierre de Londres.",
-            "sub_description_2": "- Vendemos metales preciosos a la industria."
-        },
-        {
-            "image": "/assets/images/services/second_service.jpg",
-            "title": "Analisis de Metales Preciosos",
-            "sub_description_1": "- Ofrecemos servicio de analísis de fuego ágiles y precisos",
-            "sub_description_2": "- Equipos modernos de indusción que garantizan mínimos porcentajes de merma en nuestros procesos."
-        },
-        {
-            "image": "/assets/images/services/third_service.jpg",
-            "title": "Asesoría y Acompañamiento en Comercio Internacional",
-            "sub_description_1": "- Asesoría permamente y acompañamiento en procesos de internacionalización para compañías que deseen exportar por primera vez.",
-            "sub_description_2": "- Programa Anti-lavado de Dinero que trabaja para fortalezar ambas partes de forma detallada y completa."
-        }
-    ]
+    "description": {
+        "our-service": "Nuestros servicios",
+        "subtitle": "Comercializacion de Oro, Plata y Platino",
+        "values": [
+            {
+                "image": "/assets/images/services/first_service.jpg",
+                "title": "Comercializacion de Oro, Plata y Platino",
+                "sub_description_1": "- Compramos Oro, Plata y Platino a precios de Mercado o cierre de Londres.",
+                "sub_description_2": "- Vendemos metales preciosos a la industria."
+            },
+            {
+                "image": "/assets/images/services/second_service.jpg",
+                "title": "Analisis de Metales Preciosos",
+                "sub_description_1": "- Ofrecemos servicio de analísis de fuego ágiles y precisos",
+                "sub_description_2": "- Equipos modernos de indusción que garantizan mínimos porcentajes de merma en nuestros procesos."
+            },
+            {
+                "image": "/assets/images/services/third_service.jpg",
+                "title": "Asesoría y Acompañamiento en Comercio Internacional",
+                "sub_description_1": "- Asesoría permamente y acompañamiento en procesos de internacionalización para compañías que deseen exportar por primera vez.",
+                "sub_description_2": "- Programa Anti-lavado de Dinero que trabaja para fortalezar ambas partes de forma detallada y completa."
+            }
+        ]
+    },
+    "question": "¿TIENE ALGUNA PREGUNTA SOBRE NUESTROS SERVICIOS?",
+    "question_text": "Haga clic en el botón a continuación para ponerse en contacto con nosotros lo antes posible.",
+    "cta": "Contactanos"
 }

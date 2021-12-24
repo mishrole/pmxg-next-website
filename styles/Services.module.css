@@ -1,0 +1,97 @@
+.image{
+    background-image: url('/assets/images/about-us/liquid-gold-scaled.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+}
+
+.image .title{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 3.2rem;
+}
+
+.containerCards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.4rem;
+}
+
+.containerCards .card{
+    border: none;
+    width: 100%;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
+}
+
+.containerCards .cardTitle{
+    color: #222;
+    font-weight: 800;
+}
+
+.containerCards .cardBody{
+    text-align: center;
+    padding: 2.6rem;
+    color: #555;
+}
+.containerCards .cardText{
+    margin: 1.3rem 0 0 0;
+
+}
+
+.row{
+    padding: 0;
+}
+
+.ourServices{
+    margin: 6rem 0;
+}
+
+.ourServices .titles{
+    margin-bottom: 3rem;
+}
+
+.ourServices h2{
+    color: #222;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 800;
+    font-size: 35px;
+    line-height: 45px;
+}
+
+.ourServices h3{
+    color: #777;
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 28px;
+}
+
+.contact{
+    background: #002764;
+    padding: 7rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.subtitles{
+    text-align: center;
+    /* border: 1px solid white; */
+    margin: 0 210px;
+}
+
+.subtitles h2{
+    color: white;
+    margin-bottom: 1.6rem;
+}
+
+.subtitles h5{
+    color: #999;
+}
