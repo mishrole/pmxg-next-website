@@ -53,15 +53,15 @@ export const KitcoPrices = (props) => {
                 <Row className="text-center p-2 align-items-center">
                     <Col xs={12} md={8}>
                         <StyledAnchorLarge href="https://www.kitco.com/connecting.html">
-                            <StyledImage priority="true" layout="responsive" objectFit="scale-down" width={100} height={100} src="https://www.kitconet.com/images/quotes_7a.gif" alt="[Most Recent Quotes from www.kitco.com]"></StyledImage>
+                            <StyledImage layout="responsive" objectFit="scale-down" width={100} height={100} src="https://www.kitconet.com/images/quotes_7a.gif" alt="[Most Recent Quotes from www.kitco.com]"></StyledImage>
                         </StyledAnchorLarge>
                         <StyledAnchorLarge href="https://www.kitco.com/connecting.html">
-                            <StyledImage priority="true" layout="responsive" objectFit="scale-down" width={100} height={100} src="https://www.kitconet.com/images/lf_en_7.gif" alt="[Most Recent Quotes from www.kitco.com]"></StyledImage>
+                            <StyledImage layout="responsive" objectFit="scale-down" width={100} height={100} src="https://www.kitconet.com/images/lf_en_7.gif" alt="[Most Recent Quotes from www.kitco.com]"></StyledImage>
                         </StyledAnchorLarge>
                     </Col>
                     <Col xs={12} md={4}>
                         <StyledAnchorSmall href="https://www.kitco.com/connecting.html">
-                            <StyledImage priority="true" layout="responsive" objectFit="scale-down" width={100} height={100} src="https://www.kitconet.com/images/live/s_gold.gif" alt="[Most Recent Quotes from www.kitco.com]"></StyledImage>
+                            <StyledImage layout="responsive" objectFit="scale-down" width={100} height={100} src="https://www.kitconet.com/images/live/s_gold.gif" alt="[Most Recent Quotes from www.kitco.com]"></StyledImage>
                         </StyledAnchorSmall>
                     </Col> 
                 </Row>

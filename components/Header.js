@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { useRouter } from "next/router";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 
 const StyledNavbar = styled(Navbar)`
@@ -72,8 +72,9 @@ const StyledLanguageIcon = styled.i`
   }
 `;
 
-const Header = ({ translate }) => {
-  const { language, setLanguage, menuOpen, setMenuOpen } = useContext(LanguageContext);
+const Header = ({ translate, i18n }) => {
+  // Switch Language Icon Style on Header
+  const { language, setLanguage } = useContext(LanguageContext);
 
   const router = useRouter();
   const { locales } = router;
@@ -85,50 +86,21 @@ const Header = ({ translate }) => {
   const contact = translate("common:contact");
   const login = translate("common:login");
 
-  const testElement = useRef();
-
-  async function changeLanguage(lang) {
-
-    setLanguage(lang);
-    setMenuOpen(testElement.current.className.includes('show'));
-    console.log(testElement.current.className.includes('show'));
-
-    router.push(router.pathname, router.pathname, {
-      locale: lang,
-      scroll: false
-    });
-
-    // router.replace(router.pathname, router.pathname, {locale: lang, scroll: false}, { shallow: true })
-  }
 
   const languagesButtons = locales.map((locale, index) => {
     return (
-      <StyledButton aria-label={`language-${locale}`} className="btn" key={`language-${locale}`} onClick={() => changeLanguage(locale)}>
+      <StyledButton aria-label={`language-${locale}`} className="btn" key={`language-${locale}`} onClick={() => {
+        setLanguage(locale)
+        i18n.changeLanguage(locale)
+      }}>
         <StyledLanguageIcon
           className={`flag-icon flag-icon-${
             locale === "en" ? "us" : locale
           }${language === locale ? "" : " active"}`}
         ></StyledLanguageIcon>
       </StyledButton>
-    //   <Link href="/" key={`link-language-${locale}-${index}`} scroll={false}>
-    //   <StyledAnchor
-    //     key={`language-${locale}`}
-    //     className="nav-link"
-    //     onClick={() => changeLanguage(locale)}>
-    //     <StyledLanguageIcon
-    //       className={`flag-icon flag-icon-${
-    //         locale === "en" ? "us" : locale
-    //       }${language === locale ? " active" : ""}`}
-    //     ></StyledLanguageIcon>
-    //   </StyledAnchor>
-    // </Link>
     )
   });
-  
-    // const NavbarToggler = (e) => {
-    //   // testElement.current.className = menuOpen;
-    //   // setMenuOpen(testElement.current.className.includes('show'));
-    // }
   
   return (
     <>
@@ -150,12 +122,10 @@ const Header = ({ translate }) => {
               </StyledAnchorSmall>
             </Link>
           </Navbar.Brand>
-          {/* <StyledNavbarToggler aria-controls="navbarScroll" onClick={(e) => NavbarToggler(e)}/> */}
           <StyledNavbarToggler aria-controls="navbarScroll"/>
           <Navbar.Collapse
             id="navbarScroll"
-            className={`justify-content-lg-end my-3 my-lg-0${menuOpen ? ' show' : ''}`}
-            ref={testElement}
+            className={`justify-content-lg-end my-3 my-lg-0`}
           >
             <Nav navbarScroll>
               <Link href="/">

@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 const Layout = ({ children }) => {
     
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const headTitle = t('common:head-title');
     const headDescription = t('common:head-description');
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
                 <link rel="apple-touch-icon" href="/assets/favicon/cropped-pmxg-large-logo-2-1-180x180.png"></link>
                 <meta name="msapplication-TileImage" content="/assets/favicon/cropped-pmxg-large-logo-2-1-270x270.png"></meta>
             </Head>
-            <Header translate={t} />
+            <Header translate={t} i18n ={i18n} />
             { children }
             <Footer translate={t} />
         </>

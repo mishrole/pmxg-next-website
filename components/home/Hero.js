@@ -132,8 +132,15 @@ const heroCarouselImages = heroImages.map(({ component, url, alt }, index) => {
 
 export const Hero = (props) => {
 
+  // const { setCarouselIndex, carouselIndex } = useContext(LanguageContext);
+  // const handleSelect = (selectedIndex, e) => {
+  //   setCarouselIndex(selectedIndex);
+  //   console.log(selectedIndex);
+  // };
+
   return (
     <>
+      {/* <StyledCarousel indicators={false} interval={10000} fade={true} activeIndex={carouselIndex} onSelect={handleSelect}> */}
       <StyledCarousel indicators={false} interval={10000} fade={true}>
         { heroCarouselImages }
       </StyledCarousel>
