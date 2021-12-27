@@ -1,8 +1,7 @@
 import dynamic from 'next/dynamic';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-// import useInView from 'react-cool-inview';
-// import Loader from '../components/Loader';
+import { InView } from 'react-intersection-observer';
 
 // const DynamicLoader = dynamic(() => import('../components/Loader').then((mod) => mod.Loader));
 const DynamicHero = dynamic(() => import('../components/home/Hero').then((mod) => mod.Hero));
@@ -24,13 +23,6 @@ const Home = () => {
 
     const { t } = useTranslation();
 
-    // const { observe, inView } = useInView({
-    //     unobserveOnEnter: true,
-    //     rootMargin: "-50px 0px",
-    // });
-
-    // console.log(observe);
-
     return (
         <>
             {/* 
@@ -45,21 +37,47 @@ const Home = () => {
 
             <DynamicHero />
             <DynamicPMXGBanner translate={t} />
-            <DynamicStats translate={t} />
-            <DynamicOurServices translate={t} />
-            <DynamicKitcoPrices />
-            <DynamicContactBanner translate={t} />
             
-            {/* <div ref={ observe }>
-                <DynamicStats translate={t} />
-            </div>
-            {
-                inView && <>
-                    <DynamicOurServices translate={t} />
-                    <DynamicKitcoPrices />
-                    <DynamicContactBanner translate={t} />
-                </>
-            } */}
+            <InView>
+                {({inView, ref, entry}) => (
+                    <div ref={ref}>
+                        {
+                            inView ? <DynamicStats translate={t} /> : <p>Cargando...</p>
+                        }
+                    </div>
+                )}
+            </InView>
+
+            <InView>
+                {({inView, ref, entry}) => (
+                    <div ref={ref}>
+                        {
+                            inView ? <DynamicOurServices translate={t} /> : <p>Cargando...</p>
+                        }
+                    </div>
+                )}
+            </InView>
+
+            <InView>
+                {({inView, ref, entry}) => (
+                    <div ref={ref}>
+                        {
+                            inView ? <DynamicKitcoPrices /> : <p>Cargando...</p>
+                        }
+                    </div>
+                )}
+            </InView>
+
+            <InView>
+                {({inView, ref, entry}) => (
+                    <div ref={ref}>
+                        {
+                            inView ? <DynamicContactBanner translate={t} /> : <p>Cargando...</p>
+                        }
+                    </div>
+                )}
+            </InView>
+            
         </>
     )
 }

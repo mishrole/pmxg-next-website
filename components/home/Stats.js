@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Container, Row, Col } from "react-bootstrap";
 import Image from 'next/image';
+// import { useState, useRef, useCallback } from 'react'
 
 const StyledAnchor = styled.a`
     position: relative;
@@ -48,6 +49,23 @@ const kitcoImages = [
 
 export const Stats = ({ translate }) => {
 
+    // const [statsVisible, setStatsVisible] = useState(false);
+
+    // const observer = useRef();
+    // const statsElementReference = useCallback(element => {
+    //     if (observer.current) observer.current.disconnect();
+    //     observer.current = new IntersectionObserver(entries => {
+    //         if(entries[0].isIntersecting) {
+    //             console.log('visible');
+    //             setStatsVisible(true);
+    //         }
+    //     });
+    
+    //     if(element) observer.current.observe(element);
+    //     console.log(element);
+    // }, []);
+
+
     const statsList = kitcoImages.map(({translation, url, alt, connecting}) => {
         return (
             <Col xs={12} md={6} lg={3} className="p-2 d-block" key={translation}>
@@ -61,6 +79,15 @@ export const Stats = ({ translate }) => {
 
     return (
         <>
+            {/* <Container className="py-5 text-center" ref={statsElementReference}>
+                { statsVisible ? (
+                    <Row>
+                        { statsList }
+                    </Row>
+                ) : (
+                    <p>Cargando...</p>
+                )}
+            </Container> */}
             <Container className="py-5 text-center">
                 <Row>
                     { statsList }
