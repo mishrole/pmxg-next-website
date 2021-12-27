@@ -49,7 +49,7 @@ const StyledScrollDownWrapper = styled.div`
   }
 
   &:hover ${StyledArrowDown} {
-    margin-top: 10px;
+    transform: translate(0, 5px);
   }
 `;
 
