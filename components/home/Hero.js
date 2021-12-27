@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 
 import { Carousel } from "react-bootstrap";
 import { ArrowDown } from "react-bootstrap-icons";
-// import { Link, animateScroll, scroller } from 'react-scroll';
 import { scroller } from "react-scroll";
+// import { useContext } from "react";
+// import { LanguageContext } from "./../../context/LanguageContext";
 
 import GoldFurnance from "../../public/assets/images/carousel/small_gold_furnance.jpg";
 import TestingGold from "../../public/assets/images/carousel/testing_gold-scaled.jpg";
@@ -72,6 +73,48 @@ const StyledScrollDown = styled.span`
   -webkit-transition: 0.25s;
 `;
 
+const carouselKeyframes = keyframes`
+0% {
+  transform: scale(1.02, 1.02);
+}
+10% {
+  transform: scale(1.06, 1.06);
+}
+20% {
+  transform: scale(1.10, 1.10);
+}
+30% {
+  transform: scale(1.14, 1.14);
+}
+40% {
+  transform: scale(1.18, 1.18);
+}
+50% {
+  transform: scale(1.22, 1.22);
+}
+60% {
+  transform: scale(1.18, 1.18);
+}
+70% {
+  transform: scale(1.14, 1.14);
+}
+80% {
+  transform: scale(1.10, 1.10);
+}
+90% {
+  transform: scale(1.06, 1.06);
+}
+100% {
+  transform: scale(1.02, 1.02);
+}
+`;
+
+const StyledImage = styled(Image)`
+  &&& {
+    animation: linear ${carouselKeyframes} 20s infinite;
+  }
+`;
+
 const onClickUp = () => {
   scroller.scrollToTop();
 };
@@ -80,7 +123,7 @@ const scrollToPMXGBanner = (offset) => {
   scroller.scrollTo("who-we-are", {
     duration: 500,
     delay: 0,
-    smooth: "easeOutElastic",
+    smooth: true,
     offset: offset,
     spy: true,
   });
@@ -117,7 +160,7 @@ const heroImages = [
 const heroCarouselImages = heroImages.map(({ component, url, alt }, index) => {
   return (
     <StyledCarouselItem key={`hero-carousel-item-${index}`}>
-      <Image
+      <StyledImage
         src={component}
         alt={alt}
         layout="fill"
@@ -125,7 +168,7 @@ const heroCarouselImages = heroImages.map(({ component, url, alt }, index) => {
         sizes="50vw"
         loading="eager"
         priority={index === 0 ? true : false}
-      ></Image>
+      ></StyledImage>
     </StyledCarouselItem>
   )
 });

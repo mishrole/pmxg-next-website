@@ -12,6 +12,7 @@ export const LanguageProvider = ({ children }) => {
     // const [carouselIndex, setCarouselIndex] = useState(0);
 
     return (
+        // <LanguageContext.Provider value={{ language, setLanguage, carouselIndex, setCarouselIndex }}>{ children }</LanguageContext.Provider>
         <LanguageContext.Provider value={{ language, setLanguage }}>{ children }</LanguageContext.Provider>
     )
 }
