@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
+import { InView } from 'react-intersection-observer';
+import { motion } from "framer-motion";
 
 const StyledBanner = styled.div`
     background-color: var(--bs-primary);
@@ -52,9 +54,18 @@ export const ContactBanner = ({ translate }) => {
                         </Col>
                         <Col xs={12} md={6} className='p-3'>
                             <div className="d-flex justify-content-center justify-content-md-end">
-                                <StyledCtaButton className='btn btn-primary d-flex justify-content-center align-items-center m-0' href='https://app.pmxg.com/contact'>
-                                    {contactCta}
-                                </StyledCtaButton>
+                                <InView triggerOnce = { true }>
+                                    {({inView, ref, entry}) => (
+                                        <motion.div animate={{ scale: inView ? 1 : 0 }} transition={{ duration: 0.5 }} ref={ref}>
+                                            {
+                                                inView ?
+                                                <StyledCtaButton className='btn btn-primary d-flex justify-content-center align-items-center m-0' href='https://app.pmxg.com/contact'>
+                                                    {contactCta}
+                                                </StyledCtaButton> : <p>Cargando...</p>
+                                            }
+                                        </motion.div>
+                                    )}
+                                </InView>
                             </div>
                         </Col> 
                     </Row>
