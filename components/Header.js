@@ -17,6 +17,10 @@ const StyledButton = styled.button`
   &:focus {
     box-shadow: none;
   }
+
+  > span {
+    width: 20px !important;
+  }
 `;
 
 const StyledNavbarToggler = styled(Navbar.Toggle)`
@@ -60,7 +64,17 @@ const StyledImage = styled(Image)`
   padding: 0 !important;
 `;
 
-const StyledLanguageIcon = styled.i`
+// const StyledLanguageIcon = styled.i`
+//   cursor: initial;
+//   filter: saturate(0);
+
+//   &&&.active {
+//     cursor: pointer;
+//     filter: saturate(1);
+//   }
+// `;
+
+const StyledLanguageImage = styled(Image)`
   cursor: initial;
   filter: saturate(0);
 
@@ -95,11 +109,22 @@ const Header = ({ translate, i18n }) => {
           i18n.changeLanguage(locale);
         }}
       >
-        <StyledLanguageIcon
+        {/* <StyledLanguageIcon
           className={`flag-icon flag-icon-${locale === "en" ? "us" : locale}${
             language === locale ? "" : " active"
           }`}
-        ></StyledLanguageIcon>
+        ></StyledLanguageIcon> */}
+        <StyledLanguageImage
+        src={locale === "en" ? "/assets/icons/us.svg" : "/assets/icons/es.svg"}
+        alt={`Language ${locale}`}
+        layout="responsive"
+        objectFit="contain"
+        width={20}
+        height={20}
+        sizes="2vw"
+        loading="eager"
+        className={`${language === locale ? "" : "active"}`}></StyledLanguageImage>
+
       </StyledButton>
     );
   });
@@ -119,6 +144,7 @@ const Header = ({ translate, i18n }) => {
                   height={50}
                   src="/assets/images/pmxg-large-logo.png"
                   loading="eager"
+                  sizes="30vw"
                   priority
                 ></StyledImage>
               </StyledAnchorSmall>
