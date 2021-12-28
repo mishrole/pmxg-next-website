@@ -4,16 +4,64 @@ import Head from "next/head";
 // import Router from "next/router";
 import { useTranslation } from "next-i18next";
 import { InView } from "react-intersection-observer";
+import styled from "styled-components";
+import { ArrowUp } from 'react-bootstrap-icons';
+import { useState, useEffect } from "react";
 
 // Router.onRouteChangeStart = url => {
 //   console.log(url);
 // }
+const StyledTopButton = styled.button`
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(55, 55, 55, 0.4);
+  padding: 1.2rem;
+  border-radius: 100%;
+  border:none;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--bs-primary-dark);
+    transition: 0.5s all ease
+  }
+`;
+
+const StyledArrow = styled(ArrowUp)`
+  transition: 0.25s all;
+  -ms-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  -webkit-transition: 0.25s;
+`;
 
 const Layout = ({ children }) => {
   const { t, i18n } = useTranslation();
 
   const headTitle = t("common:head-title");
   const headDescription = t("common:head-description");
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true)
+    } else {
+      setIsVisible(false)
+    }
+  }
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      duration: 5000,
+    });
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility)
+  }, [])
 
   return (
     <>
@@ -52,6 +100,13 @@ const Layout = ({ children }) => {
           </div>
         )}
       </InView>
+      {
+        isVisible && (
+          <StyledTopButton className="" onClick={scrollToTop}>
+            <StyledArrow color="white" size={18} />
+          </StyledTopButton>
+        )
+      }
     </>
   );
 };
