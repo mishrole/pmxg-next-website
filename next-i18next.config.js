@@ -1,11 +1,16 @@
 module.exports = {
   i18n: {
-    locales: ["en", "es"],
-    defaultLocale: "es"
+    locales: ["es", "en"],
+    defaultLocale: "es",
   },
   ns: ['common', 'home', 'about-us', 'products', 'services'],
+  defaultNS: 'common',
   react: {
     useSuspense: false,
   },
-  localeDetection: true
+  localeDetection: false,
+  debug: true,
+  interpolation: {
+    escapeValue: false
+  }
 }

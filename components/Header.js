@@ -114,7 +114,7 @@ const Header = ({ translate, i18n }) => {
   const router = useRouter();
   const { locales, pathname, asPath, query } = router;
 
-  console.log(language);
+  // console.log(language);
 
   // const selectLanguage = lng => {
 
@@ -146,8 +146,8 @@ const Header = ({ translate, i18n }) => {
       <StyledButton
         aria-label={`language-${locale}`}
         className="btn"
-        key={`${locale}`}
-        onClick={() => nextLanguage(locale)}
+        key={locale}
+        onClick={async () => { await nextLanguage(locale)}}
         // onClick={() => {
         //   i18n.changeLanguage(locale);
         //   // console.log('locale clickado', locale)

@@ -15,6 +15,13 @@ const Layout = ({ children }) => {
   const headTitle = t("common:head-title");
   const headDescription = t("common:head-description");
 
+  console.log(i18n.languages);
+  console.log(i18n.loadNamespaces);
+
+  //   const { default: lngDict = {} } = await import(
+  //   `../public/locales/${locale}/${ns}.json`
+  // );
+
   return (
     <>
       <Head>
@@ -22,6 +29,7 @@ const Layout = ({ children }) => {
         <meta name="description" content={headDescription}></meta>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta httpEquiv="content-language" content={i18n.activeLocale} />
         <meta property="og:type" content="website"></meta>
         <meta property="og:site_name" content="PMXG"></meta>
         <link

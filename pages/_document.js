@@ -2,12 +2,13 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const language = ctx.req.language;
+    return { ...initialProps, language };
   }
 
   render() {
     return (
-      <Html>
+      <Html lang={this.props.language}>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com"></link>
           <link

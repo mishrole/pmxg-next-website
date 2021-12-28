@@ -3,6 +3,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { InView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
 
 // const DynamicLoader = dynamic(() => import('../components/Loader').then((mod) => mod.Loader));
 const DynamicHero = dynamic(() =>
@@ -24,22 +26,10 @@ const DynamicContactBanner = dynamic(() =>
   import("../components/home/ContactBanner").then((mod) => mod.ContactBanner)
 );
 
-export async function getStaticProps({ locale}, context) {
-  
-  console.log('Prueba de getStatic', locale, context);
-
-  // const { i18n } = useTranslation();
-
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common", "home"])),
-    },
-  };
-}
-
 const Home = (props) => {
   const { t } = useTranslation();
-  console.log(props);
+  console.log('indexprops',props);
+
 
   return (
     <>
@@ -111,5 +101,19 @@ const Home = (props) => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+
+  // const { default: lngDict = {} } = await import(
+  //   `../public/locales/${locale}/home.json`
+  // );
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "home"])),
+      // lngDict
+    },
+  };
+}
 
 export default Home;

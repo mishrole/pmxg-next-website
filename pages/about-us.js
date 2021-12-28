@@ -7,14 +7,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import styles from "./../styles/About-us.module.css";
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common", "about-us"])),
-    },
-  };
-}
-
 const StyledContainer = styled(Container)`
   @media ${device.mobileS} {
     &&& > span > span {
@@ -43,8 +35,9 @@ const StyledIconsWrapper = styled.div`
   }
 `;
 
-const AboutUs = () => {
+const AboutUs = (props) => {
   const { t } = useTranslation();
+  console.log('aboutusprops: ',props);
 
   const aboutUsTitle = t("about-us:title");
   const aboutUsMissionTitle = t("about-us:mission.title");
@@ -121,5 +114,13 @@ const AboutUs = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["about-us", "common"])),
+    },
+  };
+}
 
 export default AboutUs;

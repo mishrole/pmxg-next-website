@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import { appWithTranslation } from "next-i18next";
 import { LanguageProvider } from "../context/LanguageContext";
 import Layout from "../components/Layout";
