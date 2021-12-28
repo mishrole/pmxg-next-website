@@ -24,7 +24,12 @@ const DynamicContactBanner = dynamic(() =>
   import("../components/home/ContactBanner").then((mod) => mod.ContactBanner)
 );
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale}, context) {
+  
+  console.log('Prueba de getStatic', locale, context);
+
+  // const { i18n } = useTranslation();
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "home"])),
@@ -32,8 +37,9 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-const Home = () => {
+const Home = (props) => {
   const { t } = useTranslation();
+  console.log(props);
 
   return (
     <>

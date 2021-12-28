@@ -40,24 +40,47 @@ const StyledAnchor = styled.a`
     letter-spacing: 0.5px;
     margin: 0 0.5em;
     text-transform: uppercase;
+    transform: translateZ(0);
   }
 
-  &&&:hover {
+  &&&.nav-link:hover {
     color: var(--bs-dark);
   }
 
-  &&&.active {
+  &&&.nav-link.active {
     color: var(--bs-dark);
   }
 `;
 
-const StyledAnchorSmall = styled.a`
+const StyledAnchorPMXGLogo = styled.a`
   display: block;
   position: relative;
 
+  &&&:hover {
+    cursor: pointer;
+  }
+  
   > span {
     min-width: 100px;
   }
+`;
+
+const StyledAnchorLanguage = styled.a`
+  display: block;
+  position: relative;
+  margin: 0 0.5em;
+
+  &&&:hover {
+    cursor: pointer;
+  }
+  
+  > span {
+    width: 25px !important;
+  }
+`;
+
+const StyledLanguageContainer = styled.div`
+  display: flex;
 `;
 
 const StyledImage = styled(Image)`
@@ -86,10 +109,30 @@ const StyledLanguageImage = styled(Image)`
 
 const Header = ({ translate, i18n }) => {
   // Switch Language Icon Style on Header
-  const { language, setLanguage } = useContext(LanguageContext);
+  const { language, nextLanguage } = useContext(LanguageContext);
 
   const router = useRouter();
-  const { locales } = router;
+  const { locales, pathname, asPath, query } = router;
+
+  console.log(language);
+
+  // const selectLanguage = lng => {
+
+  //   setLanguage(lng);
+  //   // i18n.changeLanguage(lng, (element, err) => {
+  //   //   err();
+  //   // });
+  //   // router.push(router.asPath, router.asPath, { locale: language });
+
+    
+  //   // change just the locale and maintain all other route information including href's query
+  //   // router.push({ pathname, query }, asPath, { locale: lng, scroll: false })
+  // }
+
+  // console.log(locales);
+
+  // console.log('router.locale: ' + router.locale);
+  // console.log(`current lang: ${i18n.language}`);
 
   const home = translate("common:home");
   const about = translate("common:about-us");
@@ -103,11 +146,14 @@ const Header = ({ translate, i18n }) => {
       <StyledButton
         aria-label={`language-${locale}`}
         className="btn"
-        key={`language-${locale}`}
-        onClick={() => {
-          setLanguage(locale);
-          i18n.changeLanguage(locale);
-        }}
+        key={`${locale}`}
+        onClick={() => nextLanguage(locale)}
+        // onClick={() => {
+        //   i18n.changeLanguage(locale);
+        //   // console.log('locale clickado', locale)
+        //   // setLanguage(locale);
+        //   // console.log(`${locale} vs ${i18n.language}`)
+        // }}
       >
         {/* <StyledLanguageIcon
           className={`flag-icon flag-icon-${locale === "en" ? "us" : locale}${
@@ -115,7 +161,7 @@ const Header = ({ translate, i18n }) => {
           }`}
         ></StyledLanguageIcon> */}
         <StyledLanguageImage
-        src={locale === "en" ? "/assets/icons/us.svg" : "/assets/icons/es.svg"}
+        src={`/assets/icons/${locale}.svg`}
         alt={`Language ${locale}`}
         layout="responsive"
         objectFit="contain"
@@ -126,6 +172,24 @@ const Header = ({ translate, i18n }) => {
         className={`${language === locale ? "" : "active"}`}></StyledLanguageImage>
 
       </StyledButton>
+
+
+
+
+      // <Link key={`language-${locale}`} href={router.asPath} locale={locale} onClick={() => selectLanguage(locale)} scroll={false}>
+      //   <StyledAnchorLanguage className="nav-link">
+      //     <StyledLanguageImage
+      //     src={`/assets/icons/${locale}.svg`}
+      //     alt={`Language ${locale}`}
+      //     layout="responsive"
+      //     objectFit="contain"
+      //     width={20}
+      //     height={20}
+      //     sizes="2vw"
+      //     loading="eager"
+      //     className={`${language === locale ? "" : "active"}`}></StyledLanguageImage>
+      //   </StyledAnchorLanguage>
+      // </Link>
     );
   });
 
@@ -134,8 +198,8 @@ const Header = ({ translate, i18n }) => {
       <StyledNavbar bg="white" fixed="top" expand="lg">
         <Container>
           <Navbar.Brand>
-            <Link href="/">
-              <StyledAnchorSmall>
+            <Link href="/" locale={language}>
+              <StyledAnchorPMXGLogo>
                 <StyledImage
                   alt="PMXG Logo"
                   layout="responsive"
@@ -147,7 +211,7 @@ const Header = ({ translate, i18n }) => {
                   sizes="30vw"
                   priority
                 ></StyledImage>
-              </StyledAnchorSmall>
+              </StyledAnchorPMXGLogo>
             </Link>
           </Navbar.Brand>
           <StyledNavbarToggler aria-controls="navbarScroll" />
@@ -156,7 +220,7 @@ const Header = ({ translate, i18n }) => {
             className={`justify-content-lg-end my-3 my-lg-0`}
           >
             <Nav navbarScroll>
-              <Link href="/">
+              <Link href="/" locale={language}>
                 <StyledAnchor
                   className={
                     router.pathname === "/" ? "nav-link active" : "nav-link"
@@ -165,7 +229,7 @@ const Header = ({ translate, i18n }) => {
                   {home}
                 </StyledAnchor>
               </Link>
-              <Link href="/about-us">
+              <Link href="/about-us" locale={language}>
                 <StyledAnchor
                   className={
                     router.pathname === "/about-us"
@@ -176,7 +240,7 @@ const Header = ({ translate, i18n }) => {
                   {about}
                 </StyledAnchor>
               </Link>
-              <Link href="/products">
+              <Link href="/products" locale={language}>
                 <StyledAnchor
                   className={
                     router.pathname === "/products"
@@ -187,7 +251,7 @@ const Header = ({ translate, i18n }) => {
                   {products}
                 </StyledAnchor>
               </Link>
-              <Link href="/services">
+              <Link href="/services" locale={language}>
                 <StyledAnchor
                   className={
                     router.pathname === "/services"
@@ -211,7 +275,9 @@ const Header = ({ translate, i18n }) => {
                 {login}
               </StyledAnchor>
 
-              {languagesButtons}
+              <StyledLanguageContainer>
+                {languagesButtons}
+              </StyledLanguageContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>

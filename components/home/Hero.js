@@ -24,7 +24,6 @@ const StyledCarouselItem = styled(Carousel.Item)`
 `;
 
 const StyledArrowDown = styled(ArrowDown)`
-  color: var(--bs-light);
   transition: 0.25s;
   -ms-transition: 0.25s;
   -moz-transition: 0.25s;
@@ -60,6 +59,7 @@ const StyledScrollDown = styled.span`
   height: 70px;
   justify-content: center;
   line-height: 0;
+  transform: translateZ(0);
   transition: 0.25s;
   width: 70px;
   z-index: 99;
@@ -161,7 +161,7 @@ const heroCarouselImages = heroImages.map(({ component, url, alt }, index) => {
         alt={alt}
         layout="fill"
         objectFit="cover"
-        sizes="50vw"
+        sizes="70vw"
         loading="eager"
         priority={index === 0 ? true : false}
       ></StyledImage>

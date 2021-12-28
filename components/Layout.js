@@ -1,8 +1,13 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import Head from "next/head";
+// import Router from "next/router";
 import { useTranslation } from "next-i18next";
 import { InView } from "react-intersection-observer";
+
+// Router.onRouteChangeStart = url => {
+//   console.log(url);
+// }
 
 const Layout = ({ children }) => {
   const { t, i18n } = useTranslation();

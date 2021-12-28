@@ -6,5 +6,6 @@ module.exports = {
   ns: ['common', 'home', 'about-us', 'products', 'services'],
   react: {
     useSuspense: false,
-  }
+  },
+  localeDetection: true
 }
