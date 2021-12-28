@@ -1,7 +1,8 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { useTranslation } from "next-i18next";
 import Head from "next/head";
+import { useTranslation } from "next-i18next";
+import { InView } from "react-intersection-observer";
 
 const Layout = ({ children }) => {
   const { t, i18n } = useTranslation();
@@ -39,7 +40,13 @@ const Layout = ({ children }) => {
       </Head>
       <Header translate={t} i18n={i18n} />
       {children}
-      <Footer translate={t} />
+      <InView triggerOnce={true}>
+        {({ inView, ref, entry }) => (
+          <div ref={ref}>
+            {inView ? <Footer translate={t} /> : <p>Cargando...</p>}
+          </div>
+        )}
+      </InView>
     </>
   );
 };

@@ -25,6 +25,7 @@ const StyledImage = styled(Image)`
 const StyledAnchor = styled.a`
   &&& {
     display: block;
+    margin: 0 auto;
     max-width: 150px;
     padding-bottom: 1em;
     padding-left: 1em;
@@ -32,7 +33,6 @@ const StyledAnchor = styled.a`
 }
 
   @media ${device.mobileS} {
-    margin: 0 auto;
     padding-left: 0;
   }
 

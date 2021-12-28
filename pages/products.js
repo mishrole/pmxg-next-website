@@ -54,6 +54,8 @@ const Products = () => {
                           alt=""
                           layout="responsive"
                           objectFit="contain"
+                          loading="eager"
+                          sizes="50vw"
                         />
                         <div className="flip-card-back">
                           <Image

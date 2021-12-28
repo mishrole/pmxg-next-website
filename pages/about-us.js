@@ -97,6 +97,8 @@ const AboutUs = () => {
                 objectFit="contain"
                 width="200"
                 height="200"
+                loading="eager"
+                sizes="50vw"
               />
             </StyledContainer>
           </Col>
