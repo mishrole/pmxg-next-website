@@ -16,7 +16,8 @@ const StyledTopButton = styled.button`
   bottom: 0.5rem;
   right: 0.5rem;
   background-color: rgba(55, 55, 55, 0.4);
-  padding: 1.2rem;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
   border:none;
   align-items: center;
@@ -91,7 +92,7 @@ const Layout = ({ children }) => {
           content="/assets/favicon/cropped-pmxg-large-logo-2-1-270x270.png"
         ></meta>
       </Head>
-      <Header translate={t} i18n={i18n} />
+      <Header translate={t} />
       {children}
       <InView triggerOnce={true}>
         {({ inView, ref, entry }) => (

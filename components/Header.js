@@ -65,20 +65,6 @@ const StyledAnchorPMXGLogo = styled.a`
   }
 `;
 
-const StyledAnchorLanguage = styled.a`
-  display: block;
-  position: relative;
-  margin: 0 0.5em;
-
-  &&&:hover {
-    cursor: pointer;
-  }
-  
-  > span {
-    width: 25px !important;
-  }
-`;
-
 const StyledLanguageContainer = styled.div`
   display: flex;
 `;
@@ -86,16 +72,6 @@ const StyledLanguageContainer = styled.div`
 const StyledImage = styled(Image)`
   padding: 0 !important;
 `;
-
-// const StyledLanguageIcon = styled.i`
-//   cursor: initial;
-//   filter: saturate(0);
-
-//   &&&.active {
-//     cursor: pointer;
-//     filter: saturate(1);
-//   }
-// `;
 
 const StyledLanguageImage = styled(Image)`
   cursor: initial;
@@ -107,32 +83,16 @@ const StyledLanguageImage = styled(Image)`
   }
 `;
 
-const Header = ({ translate, i18n }) => {
+const Header = ({ translate }) => {
   // Switch Language Icon Style on Header
   const { language, nextLanguage } = useContext(LanguageContext);
 
   const router = useRouter();
-  const { locales, pathname, asPath, query } = router;
+  const { locales } = router;
 
-  console.log(language);
+  console.log(`language: ${language} - router.locale: ${router.locale}`);
 
-  // const selectLanguage = lng => {
-
-  //   setLanguage(lng);
-  //   // i18n.changeLanguage(lng, (element, err) => {
-  //   //   err();
-  //   // });
-  //   // router.push(router.asPath, router.asPath, { locale: language });
-
-    
-  //   // change just the locale and maintain all other route information including href's query
-  //   // router.push({ pathname, query }, asPath, { locale: lng, scroll: false })
-  // }
-
-  // console.log(locales);
-
-  // console.log('router.locale: ' + router.locale);
-  // console.log(`current lang: ${i18n.language}`);
+  // console.log(language);
 
   const home = translate("common:home");
   const about = translate("common:about-us");
@@ -148,18 +108,7 @@ const Header = ({ translate, i18n }) => {
         className="btn"
         key={`${locale}`}
         onClick={() => nextLanguage(locale)}
-        // onClick={() => {
-        //   i18n.changeLanguage(locale);
-        //   // console.log('locale clickado', locale)
-        //   // setLanguage(locale);
-        //   // console.log(`${locale} vs ${i18n.language}`)
-        // }}
       >
-        {/* <StyledLanguageIcon
-          className={`flag-icon flag-icon-${locale === "en" ? "us" : locale}${
-            language === locale ? "" : " active"
-          }`}
-        ></StyledLanguageIcon> */}
         <StyledLanguageImage
         src={`/assets/icons/${locale}.svg`}
         alt={`Language ${locale}`}
@@ -172,24 +121,6 @@ const Header = ({ translate, i18n }) => {
         className={`${language === locale ? "" : "active"}`}></StyledLanguageImage>
 
       </StyledButton>
-
-
-
-
-      // <Link key={`language-${locale}`} href={router.asPath} locale={locale} onClick={() => selectLanguage(locale)} scroll={false}>
-      //   <StyledAnchorLanguage className="nav-link">
-      //     <StyledLanguageImage
-      //     src={`/assets/icons/${locale}.svg`}
-      //     alt={`Language ${locale}`}
-      //     layout="responsive"
-      //     objectFit="contain"
-      //     width={20}
-      //     height={20}
-      //     sizes="2vw"
-      //     loading="eager"
-      //     className={`${language === locale ? "" : "active"}`}></StyledLanguageImage>
-      //   </StyledAnchorLanguage>
-      // </Link>
     );
   });
 

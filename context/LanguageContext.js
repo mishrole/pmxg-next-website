@@ -20,7 +20,7 @@ export const LanguageProvider = ({ children }) => {
 
     const nextLanguage = (lang) => {
         setLanguage(lang);
-        i18n.changeLanguage(language); // Not working ES to EN
+        i18n.changeLanguage(lang); // Not working ES to EN
         router.push(router.asPath, router.asPath, { locale: lang, scroll: false }); // It works BUT refresh components
     }
     return (
