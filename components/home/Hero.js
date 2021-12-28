@@ -4,8 +4,6 @@ import Image from "next/image";
 import { Carousel } from "react-bootstrap";
 import { ArrowDown } from "react-bootstrap-icons";
 import { scroller } from "react-scroll";
-// import { useContext } from "react";
-// import { LanguageContext } from "./../../context/LanguageContext";
 
 import GoldFurnance from "../../public/assets/images/carousel/small_gold_furnance.jpg";
 import TestingGold from "../../public/assets/images/carousel/testing_gold-scaled.jpg";
@@ -20,7 +18,6 @@ const StyledCarousel = styled(Carousel)`
 `;
 
 const StyledCarouselItem = styled(Carousel.Item)`
-  // max-height: 760px;
   display: block;
   min-height: 760px;
   position: relative;
@@ -40,7 +37,6 @@ const StyledScrollDownWrapper = styled.div`
   height: 70px;
   position: absolute;
   left: 50%;
-  // margin-top: -35px;
   margin-top: 30px;
   margin-left: -35px;
   z-index: 100;
@@ -170,22 +166,14 @@ const heroCarouselImages = heroImages.map(({ component, url, alt }, index) => {
         priority={index === 0 ? true : false}
       ></StyledImage>
     </StyledCarouselItem>
-  )
+  );
 });
 
 export const Hero = (props) => {
-
-  // const { setCarouselIndex, carouselIndex } = useContext(LanguageContext);
-  // const handleSelect = (selectedIndex, e) => {
-  //   setCarouselIndex(selectedIndex);
-  //   console.log(selectedIndex);
-  // };
-
   return (
     <>
-      {/* <StyledCarousel indicators={false} interval={10000} fade={true} activeIndex={carouselIndex} onSelect={handleSelect}> */}
       <StyledCarousel indicators={false} interval={10000} fade={true}>
-        { heroCarouselImages }
+        {heroCarouselImages}
       </StyledCarousel>
       <StyledScrollDownWrapper>
         <StyledScrollDown onClick={() => scrollToPMXGBanner(0)}>

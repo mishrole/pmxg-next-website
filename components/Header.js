@@ -61,14 +61,12 @@ const StyledImage = styled(Image)`
 `;
 
 const StyledLanguageIcon = styled.i`
-  filter: saturate(0);
-  // cursor: pointer;
   cursor: initial;
+  filter: saturate(0);
 
   &&&.active {
-    filter: saturate(1);
-    // cursor: initial;
     cursor: pointer;
+    filter: saturate(1);
   }
 `;
 
@@ -86,22 +84,26 @@ const Header = ({ translate, i18n }) => {
   const contact = translate("common:contact");
   const login = translate("common:login");
 
-
   const languagesButtons = locales.map((locale, index) => {
     return (
-      <StyledButton aria-label={`language-${locale}`} className="btn" key={`language-${locale}`} onClick={() => {
-        setLanguage(locale)
-        i18n.changeLanguage(locale)
-      }}>
+      <StyledButton
+        aria-label={`language-${locale}`}
+        className="btn"
+        key={`language-${locale}`}
+        onClick={() => {
+          setLanguage(locale);
+          i18n.changeLanguage(locale);
+        }}
+      >
         <StyledLanguageIcon
-          className={`flag-icon flag-icon-${
-            locale === "en" ? "us" : locale
-          }${language === locale ? "" : " active"}`}
+          className={`flag-icon flag-icon-${locale === "en" ? "us" : locale}${
+            language === locale ? "" : " active"
+          }`}
         ></StyledLanguageIcon>
       </StyledButton>
-    )
+    );
   });
-  
+
   return (
     <>
       <StyledNavbar bg="white" fixed="top" expand="lg">
@@ -122,7 +124,7 @@ const Header = ({ translate, i18n }) => {
               </StyledAnchorSmall>
             </Link>
           </Navbar.Brand>
-          <StyledNavbarToggler aria-controls="navbarScroll"/>
+          <StyledNavbarToggler aria-controls="navbarScroll" />
           <Navbar.Collapse
             id="navbarScroll"
             className={`justify-content-lg-end my-3 my-lg-0`}
@@ -183,8 +185,7 @@ const Header = ({ translate, i18n }) => {
                 {login}
               </StyledAnchor>
 
-              { languagesButtons }
-
+              {languagesButtons}
             </Nav>
           </Navbar.Collapse>
         </Container>
