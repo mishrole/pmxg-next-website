@@ -5,7 +5,7 @@ import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { device } from "../util/mediaQueries";
 import styles from "./../styles/Services.module.css";
-// import Image from "next/image";
+import Image from "next/image";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -67,6 +67,12 @@ const StyledContactTitle = styled.h2`
   }
 `;
 
+const StyledCard = styled(Card)`
+  box-shadow: 0 10px 20px rgb(0 0 0 / 5%);
+  border: none;
+  border-radius: 3px;
+`;
+
 const Services = () => {
   const { t } = useTranslation();
 
@@ -83,8 +89,23 @@ const Services = () => {
   }).map((element, i) => {
     return (
       <Col xs={12} lg={4} key={`services-${i}`} className="p-3 p-lg-4">
-        <Card className={styles.card}>
-          <Card.Img variant="top" src={element.image} />
+        <StyledCard className={styles.card}>
+          {/* <Card.Img variant="top" src={element.image} /> */}
+          <div>
+            <Image
+                priority={i === 0 && true}
+                className="card-img-top"
+                src={element.image}
+                key={`service-card-image-${i}`}
+                alt="Our services"
+                layout="responsive"
+                objectFit="scale-down"
+                width="100"
+                height="65"
+                loading="eager"
+                sizes="50vw"
+              />
+          </div>
           <Card.Body className={styles.cardBody}>
             <Card.Title className={styles.cardTitle}>
               {t(element.title)}
@@ -96,7 +117,7 @@ const Services = () => {
               {t(element.sub_description_2)}
             </Card.Text>
           </Card.Body>
-        </Card>
+        </StyledCard>
       </Col>
     );
   });

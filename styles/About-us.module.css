@@ -48,9 +48,8 @@
 }
 
 .ourMission{
-    background: #273e74;
-    /* height: 100vh; */
-    padding: 85px;
+    background: var(--bs-primary);
+    padding: 8em 2em;
     overflow: hidden;
     position: relative;
 }
@@ -99,7 +98,7 @@
 
 .ourMission .iconsContainer .cardHeader i{
     font-size: 55px;
-    color: #273e74;
+    color: var(--bs-primary);
 }
 
 .cardBody{

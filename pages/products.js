@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { device } from "./../util/mediaQueries";
 
 import styles from "./../styles/Products.module.css";
 import Head from "next/head";
@@ -22,6 +23,46 @@ const StyledCardHeader = styled(Card.Header)`
   }
 `;
 
+const StyledCard = styled(Card)`
+  border: none;
+`;
+
+const StyledCardTitle = styled(Card.Title)`
+  @media ${device.mobileS} {
+    font-size: 1.1rem !important;
+  }
+
+  @media ${device.tablet} {
+    font-size: 1.15rem !important;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.2rem !important;
+  }
+`;
+
+const StyledTitle = styled.h1`
+  &&& {
+    text-transform: uppercase;
+    color: var(--bs-dark);
+    font-weight: 700;
+    padding: 3em 1em 1em;
+    text-align: center;
+  }
+
+  @media ${device.mobileS} {
+    font-size: 1.6rem;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 1.8rem;
+  }
+
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
+`;
+
 const Products = () => {
   const { t } = useTranslation();
 
@@ -31,18 +72,18 @@ const Products = () => {
   }).map((element, i) => {
     return (
       <Row key={`categories-wrapper-${i}`}>
-        <h1 className={styles.title}>{t(element.title)}</h1>
+        <StyledTitle className={styles.title}>{t(element.title)}</StyledTitle>
         {t(`products:categories.${i}.products`, { returnObjects: true }).map(
           (productData, index) => {
             return (
               <Col
                 xs={12}
-                md={6}
+                md={4}
                 lg={4}
                 className="p-3"
                 key={`products-wrapper-${index}`}
               >
-                <Card>
+                <StyledCard>
                   <StyledCardHeader>
                     <div className="flip-card">
                       <div className="flip-card-inner">
@@ -71,13 +112,13 @@ const Products = () => {
                     </div>
                   </StyledCardHeader>
                   <Card.Body>
-                    <Card.Title className="text-uppercase text-center fw-bold">
+                    <StyledCardTitle className="text-uppercase text-center fw-bold">
                       <p>{productData.header}</p>
                       <p>{productData.body}</p>
                       <p>{productData.footer}</p>
-                    </Card.Title>
+                    </StyledCardTitle>
                   </Card.Body>
-                </Card>
+                </StyledCard>
               </Col>
             );
           }

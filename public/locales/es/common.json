@@ -8,6 +8,12 @@
     "contact": "Contacto",
     "login": "Login",
 
+    "error": {
+        "title": "Error 404",
+        "subtitle": "No encontramos la página que estabas buscando",
+        "back-cta": "Ir al inicio"
+    },
+
     "footer": {
         "address": "1890 Nw 95 Ave",
         "address_info": "Doral, FL 33172",

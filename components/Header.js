@@ -90,7 +90,7 @@ const Header = ({ translate }) => {
   const router = useRouter();
   const { locales } = router;
 
-  console.log(`language: ${language} - router.locale: ${router.locale}`);
+  // console.log(`language: ${language} - router.locale: ${router.locale}`);
 
   // console.log(language);
 

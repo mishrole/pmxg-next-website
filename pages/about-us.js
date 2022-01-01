@@ -30,9 +30,7 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledIconsWrapper = styled.div`
-  @media ${device.mobileS} {
-    grid-template-columns: repeat(1, 1fr) !important;
-  }
+  grid-template-columns: repeat(1, 1fr) !important;
 
   @media ${device.tablet} {
     grid-template-columns: repeat(2, 1fr) !important;
