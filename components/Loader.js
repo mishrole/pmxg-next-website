@@ -8,16 +8,22 @@ const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
+  transition: all 5s linear;
 `;
 
-export const Loader = () => {
+export const Loader = ({loading}) => {
   return (
     <>
-      <StyledContainer fluid>
+      {
+        loading ? (
+          <StyledContainer fluid>
         <Spinner animation="border" variant="light" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       </StyledContainer>
+        ) : null
+      }
     </>
   );
 };

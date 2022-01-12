@@ -37,21 +37,6 @@ const Home = (props) => {
 
   return (
     <>
-      {/* 
-                TODO: [OPTIMIZE] Lightouse                 (26/12/2021)
-                Performance         85
-                Accessibillity      100
-                Best Practices      100
-                SEO                 100
-
-                    - First Contentful Paint: 0.3 s                 ✅
-                    - Speed Index: 0.7 s                            ✅
-                    - Largest Contentful Paint: 0.9 s               ✅
-                    - Time to Interactive: 1.1 s                    ✅
-                    - Total Blocking Time: 40 ms                    ✅
-                    - Cumulative Layout Shift: 0.903                ❌
-            */}
-
       <DynamicHero />
       <DynamicPMXGBanner translate={t} />
 
@@ -62,7 +47,7 @@ const Home = (props) => {
             transition={{ duration: 1.0 }}
             ref={ref}
           >
-            {inView ? <DynamicStats translate={t} /> : <p>Cargando...</p>}
+            {inView ? <DynamicStats translate={t} /> : <p></p>}
           </motion.div>
         )}
       </InView>
@@ -74,7 +59,7 @@ const Home = (props) => {
             transition={{ duration: 1.0 }}
             ref={ref}
           >
-            {inView ? <DynamicOurServices translate={t} /> : <p>Cargando...</p>}
+            {inView ? <DynamicOurServices translate={t} /> : <p></p>}
           </motion.div>
         )}
       </InView>
@@ -86,7 +71,7 @@ const Home = (props) => {
             transition={{ duration: 1.0 }}
             ref={ref}
           >
-            {inView ? <DynamicKitcoPrices /> : <p>Cargando...</p>}
+            {inView ? <DynamicKitcoPrices /> : <p></p>}
           </motion.div>
         )}
       </InView>
@@ -97,7 +82,7 @@ const Home = (props) => {
             {inView ? (
               <DynamicContactBanner translate={t} />
             ) : (
-              <p>Cargando...</p>
+              <p></p>
             )}
           </div>
         )}

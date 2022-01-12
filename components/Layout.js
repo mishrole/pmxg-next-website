@@ -24,7 +24,7 @@ const StyledTopButton = styled.button`
 
   &:hover {
     background-color: var(--bs-primary-dark);
-    transition: 0.5s all ease
+    transition: 0.5s all ease;
   }
 `;
 
@@ -36,8 +36,12 @@ const StyledArrow = styled(ArrowUp)`
   -webkit-transition: 0.25s;
 `;
 
+const StyledDivDNone = styled.div`
+  display: none;
+`;
+
 const Layout = ({ children }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const headTitle = t("common:head-title");
   const headDescription = t("common:head-description");
@@ -64,6 +68,8 @@ const Layout = ({ children }) => {
     window.addEventListener("scroll", toggleVisibility)
   }, [])
 
+  let display = children.props.display;
+  
   return (
     <>
       <Head>
@@ -92,22 +98,25 @@ const Layout = ({ children }) => {
           content="/assets/favicon/cropped-pmxg-large-logo-2-1-270x270.png"
         ></meta>
       </Head>
-      <Header translate={t} />
-      {children}
-      <InView triggerOnce={true}>
-        {({ inView, ref, entry }) => (
-          <div ref={ref}>
-            {inView ? <Footer translate={t} /> : <p>Cargando...</p>}
-          </div>
-        )}
-      </InView>
-      {
-        isVisible && (
-          <StyledTopButton className="" onClick={scrollToTop}>
-            <StyledArrow color="white" size={18} />
-          </StyledTopButton>
-        )
-      }
+      
+      <StyledDivDNone style={{display}}>
+        <Header translate={t} />
+        {children}
+        <InView triggerOnce={true}>
+          {({ inView, ref, entry }) => (
+            <div ref={ref}>
+              {inView ? <Footer translate={t} /> : <p>...</p>}
+            </div>
+          )}
+        </InView>
+        {
+          isVisible && (
+            <StyledTopButton className="" onClick={scrollToTop}>
+              <StyledArrow color="white" size={18} />
+            </StyledTopButton>
+          )
+        }
+      </StyledDivDNone>
     </>
   );
 };
