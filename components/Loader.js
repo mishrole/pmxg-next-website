@@ -8,8 +8,6 @@ const StyledContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
-  transition: all 5s linear;
 `;
 
 export const Loader = ({loading}) => {
