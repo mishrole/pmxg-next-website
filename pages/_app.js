@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
     setTimeout(() => {
       setLoading(false);
       setDisplay('block');
-    }, 800);
+    }, 6000);
     import("bootstrap/dist/js/bootstrap.min");
   }, []);
 
